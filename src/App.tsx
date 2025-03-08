@@ -53,6 +53,23 @@ function App() {
                 <p className="text-sm text-muted-foreground italic">
                   A Journaling App
                 </p>
+                <div className="flex flex-wrap gap-2">
+                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
+                    Next.js
+                  </div>
+                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
+                    TypeScript
+                  </div>
+                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
+                    Tailwind CSS
+                  </div>
+                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
+                    PostgreSQL
+                  </div>
+                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
+                    Drizzle ORM
+                  </div>
+                </div>
               </div>
             </div>
           </div>
