@@ -1,7 +1,6 @@
 import { Clock } from "./components/clock";
 import { ThemeProvider } from "./components/theme_provider";
 import { ModeToggle } from "./components/mode_toggle";
-import { ArrowUpRight } from "lucide-react";
 
 function App() {
   return (
