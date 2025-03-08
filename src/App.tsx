@@ -1,9 +1,15 @@
 import { Clock } from "./components/clock";
+import { ThemeProvider } from "./components/theme_provider";
+import { ModeToggle } from "./components/mode_toggle";
 
 function App() {
   return (
-    <>
-      <main className="md:mx-10 lg:mx-36 xl:mx-76 pt-16 lg:pt-32 pb-8 ">
+    <ThemeProvider>
+      <header className="md:mx-10 lg:mx-36 xl:mx-76 py-8 flex justify-between">
+        <div></div>
+        <ModeToggle />
+      </header>
+      <main className="md:mx-10 lg:mx-36 xl:mx-76 pb-8 ">
         <div className="flex flex-col gap-16">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-1">
@@ -15,7 +21,7 @@ function App() {
                   Full Stack Developer
                 </p>
                 <p className="text-sm text-muted-foreground italic font-montserrat">
-                  Chandigarh
+                  Chandigarh, India
                 </p>
               </div>
             </div>
@@ -118,7 +124,7 @@ function App() {
         <p className="text-sm text-muted-foreground">2025</p>
         <Clock />
       </footer>
-    </>
+    </ThemeProvider>
   );
 }
 
