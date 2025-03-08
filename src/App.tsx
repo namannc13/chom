@@ -7,12 +7,14 @@ function App() {
         <div className="flex flex-col gap-16">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-1">
-              <h4 className="text-md tracking-tight">Naman Chawhan</h4>
+              <h4 className="text-md tracking-tight font-montserrat">
+                Naman Chawhan
+              </h4>
               <div className="flex justify-between">
-                <p className="text-sm text-muted-foreground italic">
+                <p className="text-sm text-muted-foreground italic font-montserrat">
                   Full Stack Developer
                 </p>
-                <p className="text-sm text-muted-foreground italic">
+                <p className="text-sm text-muted-foreground italic font-montserrat">
                   Chandigarh
                 </p>
               </div>
@@ -23,14 +25,16 @@ function App() {
               at{" "}
               <a
                 href="https://agnext.com/"
-                className="relative rounded bg-muted px-[0.75rem] py-[0.2rem] font-mono text-sm italic text-primary hover:bg-muted/70"
+                className="relative rounded bg-muted px-[0.75rem] py-[0.2rem] text-sm font-semibold italic text-primary hover:bg-muted/70"
               >
                 AgNext Technologies
               </a>
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <h4 className="text-md tracking-tight italic">Projects</h4>
+            <h4 className="text-md tracking-tight italic font-montserrat">
+              Projects
+            </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
               <div className="flex flex-col gap-2">
                 <a
@@ -46,7 +50,9 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <h4 className="text-md tracking-tight italic">Blogs</h4>
+            <h4 className="text-md tracking-tight italic font-montserrat">
+              Blogs
+            </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
               <div className="flex flex-col gap-2">
                 <p className="text-sm text-muted-foreground italic">
@@ -56,7 +62,9 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col gap-8">
-            <h4 className="text-md tracking-tight italic">Me</h4>
+            <h4 className="text-md tracking-tight italic font-montserrat">
+              Me
+            </h4>
             <div className="flex flex-col gap-4 text-muted-foreground">
               <p className="text-sm leading-7">
                 All I want to do is build websites that help people and that
@@ -80,7 +88,9 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col gap-8">
-            <h4 className="text-md tracking-tight italic">Connect</h4>
+            <h4 className="text-md tracking-tight italic font-montserrat">
+              Connect
+            </h4>
             <div className="flex flex-col gap-4">
               <p className="text-sm leading-7 text-muted-foreground">
                 I'm always looking for new opportunities to learn and grow. If

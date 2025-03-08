@@ -28,6 +28,10 @@
   background: transparent;
 }
 
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
 :root {
   font-family: "Open Sans", "Poppins", sans-serif;
   color-scheme: light dark;
