@@ -1,6 +1,7 @@
 import { Clock } from "./components/clock";
 import { ThemeProvider } from "./components/theme_provider";
 import { ModeToggle } from "./components/mode_toggle";
+import { ArrowUpRight } from "lucide-react";
 
 function App() {
   return (
@@ -28,11 +29,13 @@ function App() {
             <p className="text-sm leading-7 text-muted-foreground">
               Full Stack Developer who loves turning coffee into elegant code
               solutions. I'm currently working as a{" "}
-              <span className="text-primary">Product Development Intern</span>{" "}
+              <span className="text-primary italic">
+                Product Development Intern
+              </span>{" "}
               at{" "}
               <a
                 href="https://agnext.com/"
-                className="relative rounded bg-muted px-[0.75rem] py-[0.2rem] text-sm font-semibold italic text-primary hover:bg-muted/70"
+                className="relative text-sm italic text-accent-foreground underline underline-offset-4 hover:text-accent-foreground/70"
               >
                 AgNext Technologies
               </a>
@@ -42,11 +45,11 @@ function App() {
             <h4 className="text-md tracking-tight italic font-montserrat">
               Projects
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+            <div className="grid grid-cols-1  ">
               <div className="flex flex-col gap-2">
                 <a
                   href="https://github.com/namannc13/daydrop"
-                  className="relative rounded bg-muted px-[0.75rem] py-[0.2rem] italic text-sm font-semibold  hover:bg-muted/70 w-fit"
+                  className="relative text-sm italic text-accent-foreground underline underline-offset-4 hover:text-accent-foreground/70 w-fit"
                 >
                   Daydrop
                 </a>
@@ -54,20 +57,20 @@ function App() {
                   A Journaling App
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
+                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
                     Next.js
                   </div>
-                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
+                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
                     TypeScript
                   </div>
-                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
-                    Tailwind CSS
+                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
+                    Tailwind
                   </div>
-                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
+                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
                     PostgreSQL
                   </div>
-                  <div className="relative rounded bg-muted px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat">
-                    Drizzle ORM
+                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
+                    Drizzle
                   </div>
                 </div>
               </div>
@@ -92,28 +95,33 @@ function App() {
             <div className="flex flex-col gap-4 text-muted-foreground">
               <p className="text-sm leading-7">
                 All I want to do is{" "}
-                <span className="text-primary">build websites</span> that help
-                people and that help me grow as a developer
+                <span className="text-primary italic">build websites</span> that
+                help people and that help me grow as a developer
               </p>
               <p className="text-sm leading-7">
                 Currently, I'm focused on{" "}
-                <span className="text-primary">
+                <span className="text-primary italic">
                   exploring modern web technologies
                 </span>{" "}
                 and{" "}
-                <span className="text-primary">trying out new Languages</span>.
-                When I'm not coding, I'm reading about new developments in tech
-                or{" "}
-                <span className="text-primary">
+                <span className="text-primary italic">
+                  trying out new Languages
+                </span>
+                . When I'm not coding, I'm reading about new developments in
+                tech or{" "}
+                <span className="text-primary italic">
                   contributing to open-source projects
                 </span>
               </p>
               <p className="text-sm leading-7">
-                <span className="text-primary">I love listening to music</span>{" "}
-                of all genres. I probably listen to music more than I should{" "}
+                <span className="text-primary italic">
+                  I love listening to music
+                </span>{" "}
+                of all genres. I probably listen to music more than I should.
+                Check out my Playlist{" "}
                 <a
                   href="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9"
-                  className="relative rounded bg-muted px-[0.75rem] py-[0.2rem] italic text-sm font-semibold text-primary hover:bg-muted/70 w-fit"
+                  className="relative text-sm italic text-accent-foreground underline underline-offset-4 hover:text-accent-foreground/70 w-fit"
                 >
                   Chom with me
                 </a>
@@ -128,18 +136,18 @@ function App() {
               <p className="text-sm leading-7 text-muted-foreground">
                 I'm always looking for new opportunities to learn and grow. If
                 you have any questions, please don't hesitate to{" "}
-                <span className="text-primary">reach out.</span>
+                <span className="text-primary italic">reach out</span>.
               </p>
               <div className=" flex gap-3 flex-wrap">
                 <a
                   href="https://www.linkedin.com/in/naman-chawhan/"
-                  className="relative rounded bg-muted px-[0.75rem] py-[0.2rem] text-sm font-semibold hover:bg-muted/70 w-fit italic"
+                  className="relative rounded bg-muted text-accent-foreground px-[0.75rem] py-[0.2rem] text-sm font-semibold hover:bg-muted/70 w-fit italic"
                 >
                   LinkedIn
                 </a>
                 <a
                   href="https://github.com/namannc13"
-                  className="relative rounded bg-muted px-[0.75rem] py-[0.2rem] text-sm font-semibold hover:bg-muted/70 w-fit italic"
+                  className="relative rounded bg-muted text-accent-foreground px-[0.75rem] py-[0.2rem] text-sm font-semibold hover:bg-muted/70 w-fit italic"
                 >
                   GitHub
                 </a>
