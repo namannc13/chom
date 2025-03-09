@@ -32,12 +32,8 @@ function Project({
         <Heading>{name}</Heading>
         <Para className="!leading-normal">{year}</Para>
       </div>
-      <Link href={deployedLink} className="underline underline-offset-4">
-        {deployment}
-      </Link>
-      <Link href={githubLink} className="underline underline-offset-4">
-        {github}
-      </Link>
+      <Link href={deployedLink}>{deployment}</Link>
+      <Link href={githubLink}>{github}</Link>
       <div className="flex flex-wrap gap-2 pt-2">
         {technologies.map((technology) => (
           <Badge key={technology.id} id={technology.id}>

@@ -4,7 +4,10 @@ function Link({ children, href, className }: { children: React.ReactNode; href: 
   return (
     <a
       href={href}
-      className={cn("relative text-sm poppins-regular-italic text-accent-foreground hover:text-diff", className)}
+      className={cn(
+        "relative text-sm poppins-regular-italic text-accent-foreground hover:text-diff underline underline-offset-4",
+        className
+      )}
     >
       {children}
     </a>

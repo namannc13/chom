@@ -1,44 +1,28 @@
-"use client";
+'use client';
+import { SlidingNumber } from './ui/sliding_number';
+import { useEffect, useState } from 'react';
 
-import { useEffect, useState } from "react";
-
-interface ClockProps {
-  className?: string;
-  format24Hour?: boolean;
-}
-
-export const Clock: React.FC<ClockProps> = ({
-  className = "",
-  format24Hour = false,
-}) => {
-  const [time, setTime] = useState<Date>(new Date());
+export function Clock() {
+  const [hours, setHours] = useState(new Date().getHours());
+  const [minutes, setMinutes] = useState(new Date().getMinutes());
+  const [seconds, setSeconds] = useState(new Date().getSeconds());
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date());
+    const interval = setInterval(() => {
+      setHours(new Date().getHours());
+      setMinutes(new Date().getMinutes());
+      setSeconds(new Date().getSeconds());
     }, 1000);
-
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
-  const formatTime = (date: Date): string => {
-    const hours = format24Hour ? date.getHours() : date.getHours() % 12 || 12;
-    const minutes = date.getMinutes().toString().padStart(2, "0");
-    const seconds = date.getSeconds().toString().padStart(2, "0");
-    const ampm = format24Hour ? "" : date.getHours() >= 12 ? " PM" : " AM";
-
-    return `${hours}:${minutes}:${seconds}${ampm}`;
-  };
-
   return (
-    <time
-      className={`font-mono text-sm text-muted-foreground ${className}`}
-      dateTime={time.toISOString()}
-      aria-label="Current time"
-    >
-      {formatTime(time)}
-    </time>
+    <div className='flex items-center gap-0.5 font-mono'>
+      <SlidingNumber value={hours} padStart={true} />
+      <span className='text-zinc-500'>:</span>
+      <SlidingNumber value={minutes} padStart={true} />
+      <span className='text-zinc-500'>:</span>
+      <SlidingNumber value={seconds} padStart={true} />
+    </div>
   );
-};
-
-export default Clock;
+}
