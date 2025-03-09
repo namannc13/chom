@@ -8,6 +8,8 @@ import Para from "./components/para";
 import Heading from "./components/heading";
 import Project from "./components/project";
 import { projects } from "./data/projects";
+import { work } from "./data/work";
+import Work from "./components/work";
 
 function Navbar() {
   return (
@@ -34,8 +36,8 @@ function TopSection() {
         </div>
       </div>
       <Para>
-        Full Stack Developer who loves turning coffee into elegant code
-        solutions. I'm currently working as a{" "}
+        Full Stack Developer who loves turning coffee into clean code solutions.
+        I'm currently working as a{" "}
         <Highlight>Product Development Intern</Highlight> at{" "}
         <Link
           href="https://agnext.com/"
@@ -52,7 +54,7 @@ function Footer() {
   return (
     <footer className="md:px-10 lg:px-36 xl:px-76 border-t border-border py-4 flex justify-between">
       <p className="text-sm text-muted-foreground flex items-center gap-2">
-        Made with <i className="hgi hgi-stroke hgi-heart-remove"></i>  by Naman
+        Made with <i className="hgi hgi-stroke hgi-heart-remove"></i> by Naman
       </p>
       <div className="flex gap-2">
         <p className="text-sm text-muted-foreground">2025</p>
@@ -69,6 +71,21 @@ function App() {
       <main className="md:mx-10 lg:mx-36 xl:mx-76 pb-8 ">
         <div className="flex flex-col gap-16">
           <TopSection />
+
+          <Section header="Work" className="gap-8">
+            <div className="flex flex-col gap-8">
+              {work.map((work) => (
+                <Work
+                  key={work.id}
+                  name={work.name}
+                  company={work.company}
+                  duration={work.duration}
+                  description={work.description}
+                  technologies={work.technologies}
+                />
+              ))}
+            </div>
+          </Section>
 
           <Section header="Projects" className="gap-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -12,7 +12,10 @@ function Section({
 }) {
   return (
     <div className={cn("flex flex-col gap-4", className)}>
-      <Heading>{header}</Heading>
+      <Heading>
+        <i className="hgi hgi-stroke hgi-magic-wand-02 text-diff"></i>
+        {header}
+      </Heading>
       {children}
     </div>
   );

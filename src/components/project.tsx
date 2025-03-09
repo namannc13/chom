@@ -1,6 +1,7 @@
 import Link from "./link";
 import Para from "./para";
 import Badge from "./badge";
+import Highlight from "./highlight";
 
 function Project({
   name,
@@ -15,7 +16,7 @@ function Project({
   link: string;
   deployment: string;
   deployedLink: string;
-  description: string;
+  description: { text: string; highlight?: boolean }[][];
   technologies: {
     id: number;
     name: string;
@@ -23,24 +24,36 @@ function Project({
   year: string;
 }) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-2">
       <div className="flex justify-between items-center">
         <Link href={link} className="underline underline-offset-4">
           {name}
         </Link>
-        <Para>{year}</Para>
+        <Para className="!leading-normal">{year}</Para>
       </div>
       <Link href={deployedLink} className="underline underline-offset-4">
         {deployment}
       </Link>
-      <Para>{description}</Para>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 pt-2">
         {technologies.map((technology) => (
           <Badge key={technology.id} id={technology.id}>
             {technology.name}
           </Badge>
         ))}
       </div>
+      <Para className="!leading-normal pt-2">
+        {description.map((item, index) => (
+          <div key={index}>
+            {item.map((segment, i) =>
+              segment.highlight ? (
+                <Highlight key={i}>{segment.text}</Highlight>
+              ) : (
+                segment.text
+              )
+            )}
+          </div>
+        ))}
+      </Para>
     </div>
   );
 }
