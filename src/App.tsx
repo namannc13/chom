@@ -1,7 +1,6 @@
 import { Clock } from "./components/clock";
 import { ThemeProvider } from "./components/theme_provider";
 import { ModeToggle } from "./components/mode_toggle";
-import { Heart } from "lucide-react";
 import Section from "./components/section";
 import Link from "./components/link";
 import Highlight from "./components/highlight";
@@ -22,9 +21,9 @@ function Navbar() {
 function TopSection() {
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col">
-        <Heading className="text-lg font-semibold">Naman Chawhan</Heading>
-        <div className="flex justify-between">
+      <div className="flex flex-col gap-2">
+        <Heading className="text-3xl font-semibold">Naman Chawhan</Heading>
+        <div className="flex flex-col md:flex-row justify-between">
           <Heading className="text-muted-foreground ">
             Full Stack Developer
           </Heading>

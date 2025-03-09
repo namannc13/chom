@@ -32,7 +32,7 @@ export const projects = [
         name: "Drizzle",
       },
     ],
-    year: "2025",
+    year: "Jan 2025",
   },
   {
     id: 2,
@@ -59,6 +59,6 @@ export const projects = [
         name: "Shadcn",
       },
     ],
-    year: "2025",
+    year: "March 2025",
   },
 ];
