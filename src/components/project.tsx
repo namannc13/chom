@@ -32,8 +32,18 @@ function Project({
         <Heading>{name}</Heading>
         <Para className="!leading-normal">{year}</Para>
       </div>
-      <Link href={deployedLink}>{deployment}</Link>
-      <Link href={githubLink}>{github}</Link>
+      <Link
+        href={deployedLink}
+        className="text-muted-foreground hover:text-primary"
+      >
+        {deployment}
+      </Link>
+      <Link
+        href={githubLink}
+        className="text-muted-foreground hover:text-primary"
+      >
+        {github}
+      </Link>
       <div className="flex flex-wrap gap-2 pt-2">
         {technologies.map((technology) => (
           <Badge key={technology.id} id={technology.id}>
