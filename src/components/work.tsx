@@ -18,7 +18,7 @@ function Work({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between sm:items-center">
         <Heading>{company}</Heading>
         <Para className="!leading-normal">{duration}</Para>
       </div>

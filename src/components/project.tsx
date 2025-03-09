@@ -2,10 +2,12 @@ import Link from "./link";
 import Para from "./para";
 import Badge from "./badge";
 import Highlight from "./highlight";
+import Heading from "./heading";
 
 function Project({
   name,
-  link,
+  github,
+  githubLink,
   deployment,
   deployedLink,
   description,
@@ -13,7 +15,8 @@ function Project({
   year,
 }: {
   name: string;
-  link: string;
+  github: string;
+  githubLink: string;
   deployment: string;
   deployedLink: string;
   description: { text: string; highlight?: boolean }[][];
@@ -26,13 +29,14 @@ function Project({
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between items-center">
-        <Link href={link} className="underline underline-offset-4">
-          {name}
-        </Link>
+        <Heading>{name}</Heading>
         <Para className="!leading-normal">{year}</Para>
       </div>
       <Link href={deployedLink} className="underline underline-offset-4">
         {deployment}
+      </Link>
+      <Link href={githubLink} className="underline underline-offset-4">
+        {github}
       </Link>
       <div className="flex flex-wrap gap-2 pt-2">
         {technologies.map((technology) => (

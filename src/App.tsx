@@ -93,7 +93,8 @@ function App() {
                 <Project
                   key={project.id}
                   name={project.name}
-                  link={project.link}
+                  github={project.github}
+                  githubLink={project.githubLink}
                   deployment={project.deployment}
                   deployedLink={project.deployedLink}
                   description={project.description}
