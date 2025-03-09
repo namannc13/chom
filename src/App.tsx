@@ -15,7 +15,6 @@ import { TextEffect } from "./components/ui/text_effect";
 import { InView } from "./components/ui/in_view";
 import { motion } from "motion/react";
 import ClickSpark from "./components/ui/click_spark";
-import { useTheme } from "./components/theme_provider";
 
 function Navbar() {
   return (
@@ -84,11 +83,10 @@ function Footer() {
 }
 
 function App() {
-  const { theme } = useTheme();
   return (
     <ThemeProvider>
       <ClickSpark
-        sparkColor={theme === "dark" ? "#FFEDFA" : "#443627"}
+        sparkColor="#727D73"
         sparkSize={10}
         sparkRadius={15}
         sparkCount={8}

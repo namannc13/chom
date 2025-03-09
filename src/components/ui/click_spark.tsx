@@ -39,44 +39,50 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     const parent = canvas.parentElement;
     if (!parent) return;
 
-    let resizeTimeout: NodeJS.Timeout;
+    let resizeTimeout : NodeJS.Timeout;
 
     const resizeCanvas = () => {
       const { width, height } = parent.getBoundingClientRect();
-      canvas.width = width;
-      canvas.height = height;
+      if (canvas.width !== width || canvas.height !== height) {
+        canvas.width = width;
+        canvas.height = height;
+      }
     };
 
     const handleResize = () => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(resizeCanvas, 100);
+      resizeTimeout = setTimeout(resizeCanvas, 100); // Debounce by 100ms
     };
 
+    // Observe size changes
     const ro = new ResizeObserver(handleResize);
     ro.observe(parent);
 
+    // Initial sizing
     resizeCanvas();
 
+    // Cleanup
     return () => {
       ro.disconnect();
       clearTimeout(resizeTimeout);
     };
   }, []);
 
+
   const easeFunc = useCallback(
-    (t: number) => {
-      switch (easing) {
-        case "linear":
-          return t;
-        case "ease-in":
-          return t * t;
-        case "ease-in-out":
-          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-        default:
-          return t * (2 - t);
-      }
-    },
-    [easing]
+      (t: number) => {
+        switch (easing) {
+          case "linear":
+            return t;
+          case "ease-in":
+            return t * t;
+          case "ease-in-out":
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+          default:
+            return t * (2 - t);
+        }
+      },
+      [easing]
   );
 
   useEffect(() => {
@@ -89,13 +95,14 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
 
     const draw = (timestamp: number) => {
       if (!startTimeRef.current) {
-        startTimeRef.current = timestamp;
+        startTimeRef.current = timestamp; // store initial time
       }
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx?.clearRect(0, 0, canvas.width, canvas.height);
 
-      sparksRef.current = sparksRef.current.filter((spark) => {
+      sparksRef.current = sparksRef.current.filter((spark: Spark) => {
         const elapsed = timestamp - spark.startTime;
         if (elapsed >= duration) {
+          // Spark finished its animation
           return false;
         }
 
@@ -105,11 +112,13 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
         const distance = eased * sparkRadius * extraScale;
         const lineLength = sparkSize * (1 - eased);
 
+        // Points for the spark line
         const x1 = spark.x + distance * Math.cos(spark.angle);
         const y1 = spark.y + distance * Math.sin(spark.angle);
         const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
         const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
 
+        // Draw the spark line
         ctx.strokeStyle = sparkColor;
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -130,7 +139,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     };
   }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale]);
 
-  const handleClick = (e: React.MouseEvent) => {
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect();
@@ -138,7 +147,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     const y = e.clientY - rect.top;
 
     const now = performance.now();
-    const newSparks = Array.from({ length: sparkCount }, (_, i) => ({
+    const newSparks: Spark[] = Array.from({length: sparkCount}, (_, i) => ({
       x,
       y,
       angle: (2 * Math.PI * i) / sparkCount,
