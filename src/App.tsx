@@ -14,6 +14,8 @@ import { TextScramble } from "./components/ui/text_scramble";
 import { TextEffect } from "./components/ui/text_effect";
 import { InView } from "./components/ui/in_view";
 import { motion } from "motion/react";
+import ClickSpark from "./components/ui/click_spark";
+import { useTheme } from "./components/theme_provider";
 
 function Navbar() {
   return (
@@ -74,7 +76,7 @@ function Footer() {
         Made with <i className="hgi hgi-stroke hgi-heart-remove"></i> by Naman
       </p>
       <div className="flex gap-2 items-center text-muted-foreground">
-        <p className="text-sm ">2025</p>
+        <p className="text-sm">2025</p>
         <Clock />
       </div>
     </footer>
@@ -82,133 +84,142 @@ function Footer() {
 }
 
 function App() {
+  const { theme } = useTheme();
   return (
     <ThemeProvider>
-      <Navbar />
-      <main className="md:mx-10 lg:mx-36 xl:mx-76 pb-8 ">
-        <div className="flex flex-col gap-16">
-          <TopSection />
-
-          <Section header="Work" className="gap-8">
-            <div className="flex flex-col gap-8">
-              {work.map((work) => (
-                <Work
-                  key={work.id}
-                  name={work.name}
-                  company={work.company}
-                  duration={work.duration}
-                  description={work.description}
-                  technologies={work.technologies}
-                />
-              ))}
-            </div>
-          </Section>
-
-          <Section header="Projects" className="gap-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projects.map((project) => (
-                <Project
-                  key={project.id}
-                  name={project.name}
-                  github={project.github}
-                  githubLink={project.githubLink}
-                  deployment={project.deployment}
-                  deployedLink={project.deployedLink}
-                  description={project.description}
-                  technologies={
-                    project.technologies as { id: number; name: string }[]
-                  }
-                  year={project.year}
-                />
-              ))}
-            </div>
-          </Section>
-
-          <InView
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.4 }}
-          >
-            <Section header="Blogs">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-                <div className="flex flex-col gap-2">
-                  <p className="text-sm text-muted-foreground italic">
-                    Coming Soon
-                  </p>
-                </div>
-              </div>
-            </Section>
-          </InView>
-
-          <InView
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.4 }}
-          >
-            <Section header="Me">
-              <div className="flex flex-col gap-4">
-                <Para>
-                  All I want to do is <Highlight>build websites</Highlight> that
-                  help people and that help me grow as a developer
-                </Para>
-                <Para>
-                  Currently, I'm focused on{" "}
-                  <Highlight>exploring modern web technologies</Highlight> and{" "}
-                  <Highlight>trying out new Languages</Highlight>. When I'm not
-                  coding, I'm reading about new developments in tech or{" "}
-                  <Highlight>contributing to open-source projects</Highlight>
-                </Para>
-                <Para>
-                  <Highlight>I love listening to music</Highlight> of all
-                  genres. I probably listen to music more than I should. Check
-                  out my Playlist{" "}
-                  <Link href="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9">
-                    Chom with me
-                  </Link>
-                </Para>
-              </div>
-            </Section>
-          </InView>
-
-          <InView
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.4 }}
-          >
-            <Section header="Connect">
-              <div className="flex flex-col gap-4">
-                <Para>
-                  I'm always looking for new opportunities to learn and grow. If
-                  you have any questions, please don't hesitate to{" "}
-                  <Highlight>reach out</Highlight>.
-                </Para>
-                <div className="flex gap-4 flex-wrap">
-                  <Link href="https://www.linkedin.com/in/naman-chawhan/">
-                    LinkedIn
-                  </Link>
-                  <Link href="https://github.com/namannc13">GitHub</Link>
-                </div>
-              </div>
-            </Section>
-          </InView>
-        </div>
-      </main>
-
-      <InView
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        transition={{ duration: 0.4 }}
+      <ClickSpark
+        sparkColor={theme === "dark" ? "#FFEDFA" : "#443627"}
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
       >
-        <Footer />
-      </InView>
+        <Navbar />
+        <main className="md:mx-10 lg:mx-36 xl:mx-76 pb-8 ">
+          <div className="flex flex-col gap-16">
+            <TopSection />
+
+            <Section header="Work" className="gap-8">
+              <div className="flex flex-col gap-8">
+                {work.map((work) => (
+                  <Work
+                    key={work.id}
+                    name={work.name}
+                    company={work.company}
+                    duration={work.duration}
+                    description={work.description}
+                    technologies={work.technologies}
+                  />
+                ))}
+              </div>
+            </Section>
+
+            <Section header="Projects" className="gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {projects.map((project) => (
+                  <Project
+                    key={project.id}
+                    name={project.name}
+                    github={project.github}
+                    githubLink={project.githubLink}
+                    deployment={project.deployment}
+                    deployedLink={project.deployedLink}
+                    description={project.description}
+                    technologies={
+                      project.technologies as { id: number; name: string }[]
+                    }
+                    year={project.year}
+                  />
+                ))}
+              </div>
+            </Section>
+
+            <InView
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4 }}
+            >
+              <Section header="Blogs">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+                  <div className="flex flex-col gap-2">
+                    <p className="text-sm text-muted-foreground italic">
+                      Coming Soon
+                    </p>
+                  </div>
+                </div>
+              </Section>
+            </InView>
+
+            <InView
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4 }}
+            >
+              <Section header="Me">
+                <div className="flex flex-col gap-4">
+                  <Para>
+                    All I want to do is <Highlight>build websites</Highlight>{" "}
+                    that help people and that help me grow as a developer
+                  </Para>
+                  <Para>
+                    Currently, I'm focused on{" "}
+                    <Highlight>exploring modern web technologies</Highlight> and{" "}
+                    <Highlight>trying out new Languages</Highlight>. When I'm
+                    not coding, I'm reading about new developments in tech or{" "}
+                    <Highlight>contributing to open-source projects</Highlight>
+                  </Para>
+                  <Para>
+                    <Highlight>I love listening to music</Highlight> of all
+                    genres. I probably listen to music more than I should. Check
+                    out my Playlist{" "}
+                    <Link href="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9">
+                      Chom with me
+                    </Link>
+                  </Para>
+                </div>
+              </Section>
+            </InView>
+
+            <InView
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4 }}
+            >
+              <Section header="Connect">
+                <div className="flex flex-col gap-4">
+                  <Para>
+                    I'm always looking for new opportunities to learn and grow.
+                    If you have any questions, please don't hesitate to{" "}
+                    <Highlight>reach out</Highlight>.
+                  </Para>
+                  <div className="flex gap-4 flex-wrap">
+                    <Link href="https://www.linkedin.com/in/naman-chawhan/">
+                      LinkedIn
+                    </Link>
+                    <Link href="https://github.com/namannc13">GitHub</Link>
+                  </div>
+                </div>
+              </Section>
+            </InView>
+          </div>
+        </main>
+
+        <InView
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.4 }}
+        >
+          <Footer />
+        </InView>
+      </ClickSpark>
     </ThemeProvider>
   );
 }
