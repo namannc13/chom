@@ -28,12 +28,14 @@
   background: transparent;
 }
 
-.font-montserrat {
-  font-family: "Montserrat", sans-serif;
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 :root {
-  font-family: "Open Sans", "Poppins", sans-serif;
+  font-family: "Geist Mono", sans-serif;
   color-scheme: light dark;
 
   letter-spacing: 0.05em;
@@ -59,6 +61,7 @@
   --accent-foreground: #727D73;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
+  --diff: #443627;
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -99,6 +102,7 @@ body {
   --accent-foreground: #e8f9ff;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
+  --diff: #FFEDFA;
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
   --ring: oklch(0.439 0 0);
@@ -134,6 +138,7 @@ body {
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-diff: var(--diff);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);

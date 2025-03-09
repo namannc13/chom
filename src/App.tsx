@@ -1,84 +1,96 @@
 import { Clock } from "./components/clock";
 import { ThemeProvider } from "./components/theme_provider";
 import { ModeToggle } from "./components/mode_toggle";
+import { Heart } from "lucide-react";
+import Section from "./components/section";
+import Link from "./components/link";
+import Highlight from "./components/highlight";
+import Para from "./components/para";
+import Heading from "./components/heading";
+import Project from "./components/project";
+import { projects } from "./data/projects";
+
+function Navbar() {
+  return (
+    <header className="md:mx-10 lg:mx-36 xl:mx-76 py-8 flex justify-between">
+      <div></div>
+      <ModeToggle />
+    </header>
+  );
+}
+
+function TopSection() {
+  return (
+    <div className="flex flex-col gap-8">
+      <div className="flex flex-col">
+        <Heading className="text-lg font-semibold">Naman Chawhan</Heading>
+        <div className="flex justify-between">
+          <Heading className="text-muted-foreground ">
+            Full Stack Developer
+          </Heading>
+          <Heading className="text-muted-foreground flex items-center gap-2">
+            <i className="hgi hgi-stroke hgi-location-01"></i>
+            Chandigarh, India
+          </Heading>
+        </div>
+      </div>
+      <Para>
+        Full Stack Developer who loves turning coffee into elegant code
+        solutions. I'm currently working as a{" "}
+        <Highlight>Product Development Intern</Highlight> at{" "}
+        <Link
+          href="https://agnext.com/"
+          className="underline underline-offset-4"
+        >
+          AgNext Technologies
+        </Link>
+      </Para>
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="md:px-10 lg:px-36 xl:px-76 border-t border-border py-4 flex justify-between">
+      <p className="text-sm text-muted-foreground flex items-center gap-2">
+        Made with <i className="hgi hgi-stroke hgi-heart-remove"></i>  by Naman
+      </p>
+      <div className="flex gap-2">
+        <p className="text-sm text-muted-foreground">2025</p>
+        <Clock />
+      </div>
+    </footer>
+  );
+}
 
 function App() {
   return (
     <ThemeProvider>
-      <header className="md:mx-10 lg:mx-36 xl:mx-76 py-8 flex justify-between">
-        <div></div>
-        <ModeToggle />
-      </header>
+      <Navbar />
       <main className="md:mx-10 lg:mx-36 xl:mx-76 pb-8 ">
         <div className="flex flex-col gap-16">
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-1">
-              <h4 className="text-md tracking-tight font-montserrat">
-                Naman Chawhan
-              </h4>
-              <div className="flex justify-between">
-                <p className="text-sm text-muted-foreground italic font-montserrat">
-                  Full Stack Developer
-                </p>
-                <p className="text-sm text-muted-foreground italic font-montserrat">
-                  Chandigarh, India
-                </p>
-              </div>
+          <TopSection />
+
+          <Section header="Projects" className="gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {projects.map((project) => (
+                <Project
+                  key={project.id}
+                  name={project.name}
+                  link={project.link}
+                  deployment={project.deployment}
+                  deployedLink={project.deployedLink}
+                  description={project.description}
+                  technologies={
+                    project.technologies as { id: number; name: string }[]
+                  }
+                  year={project.year}
+                />
+              ))}
             </div>
-            <p className="text-sm leading-7 text-muted-foreground">
-              Full Stack Developer who loves turning coffee into elegant code
-              solutions. I'm currently working as a{" "}
-              <span className="text-primary italic">
-                Product Development Intern
-              </span>{" "}
-              at{" "}
-              <a
-                href="https://agnext.com/"
-                className="relative text-sm italic text-accent-foreground underline underline-offset-4 hover:text-accent-foreground/70"
-              >
-                AgNext Technologies
-              </a>
-            </p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <h4 className="text-md tracking-tight italic font-montserrat">
-              Projects
-            </h4>
-            <div className="grid grid-cols-1  ">
-              <div className="flex flex-col gap-2">
-                <a
-                  href="https://github.com/namannc13/daydrop"
-                  className="relative text-sm italic text-accent-foreground underline underline-offset-4 hover:text-accent-foreground/70 w-fit"
-                >
-                  Daydrop
-                </a>
-                <p className="text-sm text-muted-foreground italic">
-                  A Journaling App
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
-                    Next.js
-                  </div>
-                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
-                    TypeScript
-                  </div>
-                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
-                    Tailwind
-                  </div>
-                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
-                    PostgreSQL
-                  </div>
-                  <div className="relative rounded bg-muted text-accent-foreground font-semibold px-[0.75rem] py-[0.1rem] italic text-xs  hover:bg-muted/70 w-fit font-montserrat hover:cursor-pointer">
-                    Drizzle
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <h4 className="text-md tracking-tight italic font-montserrat">
-              Blogs
-            </h4>
+          </Section>
+
+          <Section header="Blogs">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
               <div className="flex flex-col gap-2">
                 <p className="text-sm text-muted-foreground italic">
@@ -86,79 +98,54 @@ function App() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col gap-8">
-            <h4 className="text-md tracking-tight italic font-montserrat">
-              Me
-            </h4>
-            <div className="flex flex-col gap-4 text-muted-foreground">
-              <p className="text-sm leading-7">
-                All I want to do is{" "}
-                <span className="text-primary italic">build websites</span> that
+          </Section>
+
+          <Section header="Me">
+            <div className="flex flex-col gap-4">
+              <Para>
+                All I want to do is <Highlight>build websites</Highlight> that
                 help people and that help me grow as a developer
-              </p>
-              <p className="text-sm leading-7">
+              </Para>
+              <Para>
                 Currently, I'm focused on{" "}
-                <span className="text-primary italic">
-                  exploring modern web technologies
-                </span>{" "}
-                and{" "}
-                <span className="text-primary italic">
-                  trying out new Languages
-                </span>
-                . When I'm not coding, I'm reading about new developments in
-                tech or{" "}
-                <span className="text-primary italic">
-                  contributing to open-source projects
-                </span>
-              </p>
-              <p className="text-sm leading-7">
-                <span className="text-primary italic">
-                  I love listening to music
-                </span>{" "}
-                of all genres. I probably listen to music more than I should.
-                Check out my Playlist{" "}
-                <a
+                <Highlight>exploring modern web technologies</Highlight> and{" "}
+                <Highlight>trying out new Languages</Highlight>. When I'm not
+                coding, I'm reading about new developments in tech or{" "}
+                <Highlight>contributing to open-source projects</Highlight>
+              </Para>
+              <Para>
+                <Highlight>I love listening to music</Highlight> of all genres.
+                I probably listen to music more than I should. Check out my
+                Playlist{" "}
+                <Link
                   href="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9"
-                  className="relative text-sm italic text-accent-foreground underline underline-offset-4 hover:text-accent-foreground/70 w-fit"
+                  className="underline underline-offset-4"
                 >
                   Chom with me
-                </a>
-              </p>
+                </Link>
+              </Para>
             </div>
-          </div>
-          <div className="flex flex-col gap-8">
-            <h4 className="text-md tracking-tight italic font-montserrat">
-              Connect
-            </h4>
+          </Section>
+
+          <Section header="Connect">
             <div className="flex flex-col gap-4">
-              <p className="text-sm leading-7 text-muted-foreground">
+              <Para>
                 I'm always looking for new opportunities to learn and grow. If
                 you have any questions, please don't hesitate to{" "}
-                <span className="text-primary italic">reach out</span>.
-              </p>
-              <div className=" flex gap-3 flex-wrap">
-                <a
-                  href="https://www.linkedin.com/in/naman-chawhan/"
-                  className="relative rounded bg-muted text-accent-foreground px-[0.75rem] py-[0.2rem] text-sm font-semibold hover:bg-muted/70 w-fit italic"
-                >
+                <Highlight>reach out</Highlight>.
+              </Para>
+              <div className="flex gap-3 flex-wrap">
+                <Link href="https://www.linkedin.com/in/naman-chawhan/">
                   LinkedIn
-                </a>
-                <a
-                  href="https://github.com/namannc13"
-                  className="relative rounded bg-muted text-accent-foreground px-[0.75rem] py-[0.2rem] text-sm font-semibold hover:bg-muted/70 w-fit italic"
-                >
-                  GitHub
-                </a>
+                </Link>
+                <Link href="https://github.com/namannc13">GitHub</Link>
               </div>
             </div>
-          </div>
+          </Section>
         </div>
       </main>
-      <footer className="md:px-10 lg:px-36 xl:px-76 border-t border-border py-4 flex justify-between">
-        <p className="text-sm text-muted-foreground">2025</p>
-        <Clock />
-      </footer>
+
+      <Footer />
     </ThemeProvider>
   );
 }
