@@ -34,6 +34,11 @@
   font-style: italic;
 }
 
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
 :root {
   font-family: "Geist Mono", sans-serif;
   color-scheme: light dark;
@@ -86,7 +91,7 @@ body {
 }
 
 .dark {
-  /* --background: oklch(0.217 0 0);
+  --background: oklch(0.217 0 0);
   --foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
   --primary-foreground: oklch(0.205 0 0);
@@ -118,9 +123,9 @@ body {
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0); */
+  --sidebar-ring: oklch(0.439 0 0);
 
-  --background: #1e201e;
+  /* --background: #1e201e;
   --foreground: #ecdfcc;
   --primary: #ecdfcc;
   --primary-foreground: oklch(0.205 0 0);
@@ -152,7 +157,7 @@ body {
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar-ring: oklch(0.439 0 0); */
 }
 
 @theme inline {

@@ -44,14 +44,14 @@ function Project({
       >
         {github}
       </Link>
-      <div className="flex flex-wrap gap-2 pt-2">
+      <div className="flex flex-wrap gap-2 pt-2 pb-1">
         {technologies.map((technology) => (
           <Badge key={technology.id} id={technology.id}>
             {technology.name}
           </Badge>
         ))}
       </div>
-      <Para className="!leading-normal pt-2">
+      <Para className="flex gap-2">
         {description.map((item, index) => (
           <div key={index}>
             {item.map((segment, i) =>
