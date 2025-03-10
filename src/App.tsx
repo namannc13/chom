@@ -71,7 +71,7 @@ function App() {
       >
         <BrowserRouter>
           <Navbar />
-          <main className="md:mx-10 lg:mx-36 xl:mx-76 pb-8 min-h-[calc(100vh-153px)]">
+          <main className="md:mx-10 lg:mx-36 xl:mx-76 pb-8 min-h-[calc(100svh-153px)] sm:min-h-[calc(100vh-153px)]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
