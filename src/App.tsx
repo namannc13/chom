@@ -24,7 +24,7 @@ function Navbar() {
       <div className="flex items-center gap-6">
         <button
           onClick={() => navigate("/")}
-          className={`relative text-16 ${
+          className={`relative text-[16px] ${
             location.pathname === "/"
               ? "text-accent-foreground"
               : "text-foreground"
@@ -34,7 +34,7 @@ function Navbar() {
         </button>
         <button
           onClick={() => navigate("/projects")}
-          className={`relative text-16 ${
+          className={`relative text-[16px] ${
             location.pathname === "/projects"
               ? "text-accent-foreground"
               : "text-foreground"
@@ -44,7 +44,7 @@ function Navbar() {
         </button>
         <button
           onClick={() => navigate("/blogs")}
-          className={`relative text-16 ${
+          className={`relative text-[16px] ${
             location.pathname === "/blogs"
               ? "text-accent-foreground"
               : "text-foreground"

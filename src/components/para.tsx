@@ -8,7 +8,7 @@ function Para({
   className?: string;
 }) {
   return (
-    <div className={cn("text-16 leading-7 text-muted-foreground", className)}>
+    <div className={cn("text-[16px] leading-7 text-muted-foreground", className)}>
       {children}
     </div>
   );

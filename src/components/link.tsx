@@ -1,24 +1,26 @@
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 function Link({
   children,
-  href,
+  to,
   className,
 }: {
   children: React.ReactNode;
-  href: string;
+  to: string;
   className?: string;
 }) {
+  const navigate = useNavigate();
   return (
-    <a
-      href={href}
+    <button
+      onClick={() => navigate(to)}
       className={cn(
-        "relative text-16 poppins-regular-italic text-foreground hover:text-accent-foreground underline underline-offset-4",
+        "text-[16px] flex justify-start items-center gap-2 text-accent-foreground hover:text-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow]",
         className
       )}
     >
       {children}
-    </a>
+    </button>
   );
 }
 

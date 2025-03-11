@@ -4,6 +4,7 @@ import Link from "@/components/link";
 import Para from "@/components/para";
 import Project from "@/components/project";
 import Section from "@/components/section";
+import { Button } from "@/components/ui/button";
 import { InView } from "@/components/ui/in_view";
 import { TextEffect } from "@/components/ui/text_effect";
 import { TextScramble } from "@/components/ui/text_scramble";
@@ -12,6 +13,7 @@ import { projects } from "@/data/projects";
 import { work } from "@/data/work";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 function TopSection() {
   return (
@@ -48,13 +50,19 @@ function TopSection() {
         Full Stack Developer who loves turning coffee into clean code solutions.
         I'm currently working as a{" "}
         <Highlight>Product Development Intern</Highlight> at{" "}
-        <Link href="https://agnext.com/">AgNext Technologies</Link>
+        <Link
+          to="https://agnext.com/"
+          className="text-primary hover:text-accent-foreground"
+        >
+          AgNext Technologies
+        </Link>
       </Para>
     </motion.div>
   );
 }
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex flex-col gap-16">
@@ -92,13 +100,14 @@ function Home() {
                 year={project.year}
               />
             ))}
-            <Link
-              href="/projects"
-              className="flex items-center gap-2 text-accent-foreground hover:text-foreground"
-            >
-              All Projects <ArrowUpRight className="w-4 h-4" />
-            </Link>
           </div>
+          <Button
+            variant="link"
+            onClick={() => navigate("/projects")}
+            className="relative text-[16px] flex justify-start items-center gap-2 text-accent-foreground hover:text-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0"
+          >
+            All Projects <ArrowUpRight className="w-4 h-4" />
+          </Button>
         </Section>
 
         <InView
@@ -110,15 +119,16 @@ function Home() {
         >
           <Section header="Blogs">
             <div className="flex flex-col gap-4">
-              <p className="text-16 text-muted-foreground italic">
+              <p className="text-[16px] text-muted-foreground italic">
                 Coming Soon
               </p>
-              <Link
-                href="/blogs"
-                className="flex items-center gap-2 text-accent-foreground pt-8 hover:text-foreground"
+              <Button
+                variant="link"
+                onClick={() => navigate("/blogs")}
+                className="text-[16px] flex justify-start items-center gap-2 text-accent-foreground pt-8 hover:text-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0"
               >
                 All Blogs <ArrowUpRight className="w-4 h-4" />
-              </Link>
+              </Button>
             </div>
           </Section>
         </InView>
@@ -149,7 +159,10 @@ function Home() {
                 <Highlight>Music is a huge part of my life</Highlight> - I
                 probably have my headphones on more than 50% of the time. Check
                 out my{" "}
-                <Link href="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9">
+                <Link
+                  to="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9"
+                  className="text-primary hover:text-accent-foreground"
+                >
                   Playlist
                 </Link>
                 .
@@ -175,12 +188,17 @@ function Home() {
             <div className="flex flex-col gap-4">
               <div className="flex gap-4 flex-wrap">
                 <Link
-                  href="https://www.linkedin.com/in/naman-chawhan/"
-                  className="text-16"
+                  to="https://www.linkedin.com/in/naman-chawhan/"
+                  className="text-primary hover:text-accent-foreground"
                 >
                   LinkedIn
                 </Link>
-                <Link href="https://github.com/namannc13">GitHub</Link>
+                <Link
+                  to="https://github.com/namannc13"
+                  className="text-primary hover:text-accent-foreground"
+                >
+                  GitHub
+                </Link>
               </div>
             </div>
           </Section>

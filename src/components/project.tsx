@@ -33,14 +33,14 @@ function Project({
         <Para className="!leading-normal">{year}</Para>
       </div>
       <Link
-        href={deployedLink}
-        className="text-muted-foreground hover:text-foreground text-sm"
+        to={deployedLink}
+        className="text-muted-foreground hover:text-accent-foreground text-sm"
       >
         {deployment}
       </Link>
       <Link
-        href={githubLink}
-        className="text-muted-foreground hover:text-foreground text-sm"
+        to={githubLink}
+        className="text-muted-foreground hover:text-accent-foreground text-sm"
       >
         {github}
       </Link>

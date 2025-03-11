@@ -13,7 +13,7 @@ function Heading({
     <h4
       className={cn(
         "font-montserrat tracking-[0.075em] flex items-center gap-2 font-semibold",
-        variant === "faded" ? "text-16" : "text-xl",
+        variant === "faded" ? "text-[16px]" : "text-xl",
         className
       )}
     >
