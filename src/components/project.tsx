@@ -29,7 +29,7 @@ function Project({
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between items-center">
-        <Heading>{name}</Heading>
+        <Heading className="text-xl">{name}</Heading>
         <Para className="!leading-normal">{year}</Para>
       </div>
       <Link

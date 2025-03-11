@@ -156,7 +156,7 @@ function Home() {
                 <Highlight>reach out</Highlight>.
               </Para>
               <div className="flex gap-4 flex-wrap">
-                <Link href="https://www.linkedin.com/in/naman-chawhan/">
+                <Link href="https://www.linkedin.com/in/naman-chawhan/" className="text-16">
                   LinkedIn
                 </Link>
                 <Link href="https://github.com/namannc13">GitHub</Link>

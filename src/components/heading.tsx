@@ -10,7 +10,7 @@ function Heading({
   return (
     <h4
       className={cn(
-        "text-16 font-montserrat tracking-[0.075em] flex items-center gap-2 font-semibold",
+        "text-xl font-montserrat tracking-[0.075em] flex items-center gap-2 font-semibold",
         className
       )}
     >

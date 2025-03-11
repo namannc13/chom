@@ -48,11 +48,11 @@ function Navbar() {
 function Footer() {
   return (
     <footer className="md:px-10 lg:px-36 xl:px-76 border-t border-border py-4 flex justify-between">
-      <p className="text-16 text-muted-foreground flex items-center gap-2">
+      <p className="text-sm text-muted-foreground flex items-center gap-2">
         Made with <i className="hgi hgi-stroke hgi-heart-remove"></i> by Naman
       </p>
       <div className="flex gap-2 items-center text-muted-foreground">
-        <p className="text-16">2025</p>
+        <p className="text-sm">2025</p>
         <Clock />
       </div>
     </footer>
