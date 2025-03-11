@@ -1,23 +1,22 @@
-import { Sun } from "lucide-react";
-
-import { Button } from "./ui/button";
 import { useTheme } from "./theme_provider";
+import { Button } from "./ui/button";
+
+const themeIcons = {
+  light: <i className="hgi hgi-stroke hgi-sun-01 h-[1.2rem] w-[1.2rem]"/>,
+  dark: <i className="hgi hgi-stroke hgi-moon-01 h-[1.2rem] w-[1.2rem]"/>,
+};
 
 export function ModeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { theme, cycleTheme } = useTheme();
 
   return (
     <Button
       size="icon"
       className="hover:cursor-pointer rounded-full flex items-center justify-center"
       variant="outline"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={cycleTheme}
     >
-      {theme === "light" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      ) : (
-        <i className="hgi hgi-stroke hgi-moon h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"></i>
-      )}
+      {themeIcons[theme]}
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

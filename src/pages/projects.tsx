@@ -15,7 +15,7 @@ function TopSection() {
       transition={{ duration: 2 }}
     >
       <Heading className="text-4xl">
-        <i className="hgi hgi-stroke hgi-magic-wand-02"></i>
+        <i className="hgi hgi-stroke hgi-magic-wand-02 text-accent-foreground"></i>
         <TextScramble speed={0.005} duration={1}>
           Projects
         </TextScramble>

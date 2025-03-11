@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "dark" | "light" | "system";
+export const themes = ["light", "dark"] as const;
+
+type Theme = (typeof themes)[number];
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -11,18 +13,20 @@ type ThemeProviderProps = {
 type ThemeProviderState = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
+  cycleTheme: () => void;
 };
 
 const initialState: ThemeProviderState = {
-  theme: "system",
+  theme: "light",
   setTheme: () => null,
+  cycleTheme: () => null,
 };
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "light",
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
@@ -33,20 +37,45 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement;
 
-    root.classList.remove("light", "dark");
+    // Remove all possible theme classes
+    themes.forEach((t) => root.classList.remove(t));
 
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-
-      root.classList.add(systemTheme);
-      return;
-    }
-
+    // Add the current theme
     root.classList.add(theme);
   }, [theme]);
+
+  const applyTheme = (theme: Theme) => {
+    const root = document.documentElement;
+
+    switch (theme) {
+      case "dark":
+        root.style.setProperty("--background", "oklch(0.217 0 0)");
+        root.style.setProperty("--foreground", "oklch(0.985 0 0)");
+        root.style.setProperty("--muted", "oklch(0.269 0 0)");
+        root.style.setProperty("--muted-foreground", "oklch(0.708 0 0)");
+        root.style.setProperty("--accent-foreground", "#B8001F");
+        root.style.setProperty("--border", "oklch(0.269 0 0)");
+        break;
+
+      case "light":
+        root.style.setProperty("--background", "oklch(0.99 0.01 0.99)");
+        root.style.setProperty("--foreground", "oklch(0.205 0 0)");
+        root.style.setProperty("--muted", "oklch(0.97 0 0)");
+        root.style.setProperty("--muted-foreground", "oklch(0.556 0 0)");
+        root.style.setProperty("--accent-foreground", "#B8001F");
+        root.style.setProperty("--border", "oklch(0.922 0 0)");
+        break;
+    }
+  };
+
+  const cycleTheme = () => {
+    const currentIndex = themes.indexOf(theme);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const nextTheme = themes[nextIndex];
+    localStorage.setItem(storageKey, nextTheme);
+    applyTheme(nextTheme);
+    setTheme(nextTheme);
+  };
 
   const value = {
     theme,
@@ -54,6 +83,7 @@ export function ThemeProvider({
       localStorage.setItem(storageKey, theme);
       setTheme(theme);
     },
+    cycleTheme,
   };
 
   return (
