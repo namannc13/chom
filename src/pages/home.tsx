@@ -21,7 +21,7 @@ function TopSection() {
       transition={{ duration: 2 }}
     >
       <div className="flex flex-col gap-2">
-        <Heading className="text-3xl">
+        <Heading className="text-4xl">
           <TextScramble speed={0.005} duration={1}>
             Naman Chawhan
           </TextScramble>
@@ -101,7 +101,7 @@ function Home() {
           <Section header="Blogs">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
               <div className="flex flex-col gap-2">
-                <p className="text-sm text-muted-foreground italic">
+                <p className="text-lg text-muted-foreground italic">
                   Coming Soon
                 </p>
               </div>

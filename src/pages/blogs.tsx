@@ -11,7 +11,7 @@ function TopSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
     >
-      <Heading className="text-3xl">
+      <Heading className="text-4xl">
         <i className="hgi hgi-stroke hgi-magic-wand-02"></i>
         <TextScramble speed={0.005} duration={1}>
           Blogs

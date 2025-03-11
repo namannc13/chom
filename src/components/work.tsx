@@ -20,9 +20,9 @@ function Work({
     <div className="flex flex-col gap-2">
       <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
         <Heading>{company}</Heading>
-        <Para className="!leading-normal">{duration}</Para>
+        <Para className="!leading-normal text-sm">{duration}</Para>
       </div>
-      <Para className="!leading-normal">{name}</Para>
+      <Para className="!leading-normal text-sm">{name}</Para>
       <div className="flex flex-wrap gap-2 pt-1 pb-2">
         {technologies.map((technology) => (
           <Badge key={technology.id} id={technology.id}>

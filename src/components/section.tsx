@@ -18,7 +18,7 @@ function Section({
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
     >
-      <Heading>
+      <Heading className="text-2xl">
         <i className="hgi hgi-stroke hgi-magic-wand-02"></i>
         {header}
       </Heading>

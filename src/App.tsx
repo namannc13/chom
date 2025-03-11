@@ -23,19 +23,19 @@ function Navbar() {
       <div className="flex items-center gap-6">
         <button
           onClick={() => navigate("/")}
-          className="relative text-md text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className="relative text-lg text-primary hover:text-muted-foreground hover:cursor-pointer"
         >
           <span className="hidden lg:inline">[h]</span> home
         </button>
         <button
           onClick={() => navigate("/projects")}
-          className="relative text-md text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className="relative text-lg text-primary hover:text-muted-foreground hover:cursor-pointer"
         >
           <span className="hidden lg:inline">[p]</span> projects
         </button>
         <button
           onClick={() => navigate("/blogs")}
-          className="relative text-md text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className="relative text-lg text-primary hover:text-muted-foreground hover:cursor-pointer"
         >
           <span className="hidden lg:inline">[b]</span> blogs
         </button>
