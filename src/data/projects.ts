@@ -30,11 +30,13 @@ export const projects = [
     githubLink: "https://github.com/namannc13/daydrop",
     deployment: "daydrop.vercel.app",
     deployedLink: "https://daydrop.vercel.app/",
-    description: [[{ text: "A Journaling App which I use daily to track my day" }]],
+    description: [
+      [{ text: "A Journaling App which I use daily to track my day" }],
+    ],
     technologies: [
       {
         id: 1,
-        name: "Next.js",
+        name: "Next",
       },
       {
         id: 2,
@@ -45,11 +47,11 @@ export const projects = [
         name: "Tailwind",
       },
       {
-        id: 5,
+        id: 4,
         name: "PostgreSQL",
       },
       {
-        id: 6,
+        id: 5,
         name: "Drizzle",
       },
     ],

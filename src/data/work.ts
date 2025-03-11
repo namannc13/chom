@@ -23,9 +23,10 @@ export const work = [
     technologies: [
       { id: 1, name: "React" },
       { id: 3, name: "Tailwind" },
-      { id: 2, name: "Node.js" },
+      { id: 2, name: "Node" },
       { id: 4, name: "Express" },
-      { id: 5, name: "PostgreSQL" },
+      { id: 5, name: "MongoDB" },
+      { id: 6, name: "PostgreSQL" },
     ],
   },
 ];

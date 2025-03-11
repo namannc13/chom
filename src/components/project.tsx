@@ -51,9 +51,10 @@ function Project({
           </Badge>
         ))}
       </div>
-      <Para className="flex gap-2">
-        {description.map((item, index) => (
-          <div key={index}>
+      {description.map((item, index) => (
+        <Para className=" flex gap-2" key={index}>
+          <i className="hgi hgi-stroke hgi-arrow-right-01 "></i>
+          <div>
             {item.map((segment, i) =>
               segment.highlight ? (
                 <Highlight key={i}>{segment.text}</Highlight>
@@ -62,8 +63,8 @@ function Project({
               )
             )}
           </div>
-        ))}
-      </Para>
+        </Para>
+      ))}
     </div>
   );
 }

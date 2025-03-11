@@ -27,12 +27,15 @@ function TopSection() {
           </TextScramble>
         </Heading>
         <div className="flex flex-col md:flex-row justify-between gap-2">
-          <Heading className="text-16 text-muted-foreground ">
+          <Heading className="text-muted-foreground" variant="faded">
             <TextEffect per="char" preset="fade">
               Full Stack Developer
             </TextEffect>
           </Heading>
-          <Heading className="text-16 text-muted-foreground flex items-center gap-2">
+          <Heading
+            className="text-muted-foreground flex items-center gap-2"
+            variant="faded"
+          >
             <i className="hgi hgi-stroke hgi-location-01"></i>
             <TextEffect per="char" preset="fade">
               Chandigarh, India
