@@ -17,11 +17,11 @@ export function Clock() {
   }, []);
 
   return (
-    <div className='flex items-center gap-0.5 font-mono text-sm'>
+    <div className="flex items-center gap-0.5 font-mono text-sm">
       <SlidingNumber value={hours} padStart={true} />
-      <span className='text-zinc-500'>:</span>
+      <span className="text-muted-foreground">:</span>
       <SlidingNumber value={minutes} padStart={true} />
-      <span className='text-zinc-500'>:</span>
+      <span className="text-muted-foreground">:</span>
       <SlidingNumber value={seconds} padStart={true} />
     </div>
   );
