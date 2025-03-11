@@ -27,12 +27,12 @@ function TopSection() {
           </TextScramble>
         </Heading>
         <div className="flex flex-col md:flex-row justify-between gap-2">
-          <Heading className="text-muted-foreground ">
+          <Heading className="text-16 text-muted-foreground ">
             <TextEffect per="char" preset="fade">
               Full Stack Developer
             </TextEffect>
           </Heading>
-          <Heading className="text-muted-foreground flex items-center gap-2">
+          <Heading className="text-16 text-muted-foreground flex items-center gap-2">
             <i className="hgi hgi-stroke hgi-location-01"></i>
             <TextEffect per="char" preset="fade">
               Chandigarh, India
@@ -101,7 +101,7 @@ function Home() {
           <Section header="Blogs">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
               <div className="flex flex-col gap-2">
-                <p className="text-lg text-muted-foreground italic">
+                <p className="text-16 text-muted-foreground italic">
                   Coming Soon
                 </p>
               </div>

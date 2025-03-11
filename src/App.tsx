@@ -23,19 +23,19 @@ function Navbar() {
       <div className="flex items-center gap-6">
         <button
           onClick={() => navigate("/")}
-          className="relative text-lg text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className="relative text-16 text-primary hover:text-muted-foreground hover:cursor-pointer"
         >
           <span className="hidden lg:inline">[h]</span> home
         </button>
         <button
           onClick={() => navigate("/projects")}
-          className="relative text-lg text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className="relative text-16 text-primary hover:text-muted-foreground hover:cursor-pointer"
         >
           <span className="hidden lg:inline">[p]</span> projects
         </button>
         <button
           onClick={() => navigate("/blogs")}
-          className="relative text-lg text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className="relative text-16 text-primary hover:text-muted-foreground hover:cursor-pointer"
         >
           <span className="hidden lg:inline">[b]</span> blogs
         </button>
@@ -48,11 +48,11 @@ function Navbar() {
 function Footer() {
   return (
     <footer className="md:px-10 lg:px-36 xl:px-76 border-t border-border py-4 flex justify-between">
-      <p className="text-sm text-muted-foreground flex items-center gap-2">
+      <p className="text-16 text-muted-foreground flex items-center gap-2">
         Made with <i className="hgi hgi-stroke hgi-heart-remove"></i> by Naman
       </p>
       <div className="flex gap-2 items-center text-muted-foreground">
-        <p className="text-sm">2025</p>
+        <p className="text-16">2025</p>
         <Clock />
       </div>
     </footer>
