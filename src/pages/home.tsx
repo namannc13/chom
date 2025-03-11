@@ -119,23 +119,32 @@ function Home() {
           <Section header="Me">
             <div className="flex flex-col gap-4">
               <Para>
-                All I want to do is <Highlight>build websites</Highlight> that
-                help people and that help me grow as a developer
+                I love creating{" "}
+                <Highlight>simple and clean-looking websites</Highlight> that
+                not only look great but also help people.{" "}
+                <Highlight>
+                  Aesthetics matter, but so does functionality!
+                </Highlight>
               </Para>
               <Para>
-                Currently, I'm focused on{" "}
-                <Highlight>exploring modern web technologies</Highlight> and{" "}
-                <Highlight>trying out new Languages</Highlight>. When I'm not
-                coding, I'm reading about new developments in tech or{" "}
-                <Highlight>contributing to open-source projects</Highlight>
+                I'm always excited to try out{" "}
+                <Highlight>new programming languages</Highlight> as they emerge
+                on the internet.
               </Para>
               <Para>
-                <Highlight>I love listening to music</Highlight> of all genres.
-                I probably listen to music more than I should. Check out my
-                Playlist{" "}
+                <Highlight>Music</Highlight> is a huge part of my life - I
+                probably have my headphones on more than 50% of the time. Check
+                out my{" "}
                 <Link href="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9">
-                  Chom with me
+                  Playlist
                 </Link>
+                .
+              </Para>
+              <Para>
+                When I'm not coding or vibing to music, you will find me playing
+                competitive shooters like <Highlight>Valorant</Highlight>,{" "}
+                <Highlight>Marvel Rivals</Highlight>, or battling it out in
+                platform fighters like <Highlight>Brawlhalla</Highlight>
               </Para>
             </div>
           </Section>
@@ -150,13 +159,11 @@ function Home() {
         >
           <Section header="Connect">
             <div className="flex flex-col gap-4">
-              <Para>
-                I'm always looking for new opportunities to learn and grow. If
-                you have any questions, please don't hesitate to{" "}
-                <Highlight>reach out</Highlight>.
-              </Para>
               <div className="flex gap-4 flex-wrap">
-                <Link href="https://www.linkedin.com/in/naman-chawhan/" className="text-16">
+                <Link
+                  href="https://www.linkedin.com/in/naman-chawhan/"
+                  className="text-16"
+                >
                   LinkedIn
                 </Link>
                 <Link href="https://github.com/namannc13">GitHub</Link>
