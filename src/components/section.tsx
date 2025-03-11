@@ -19,7 +19,7 @@ function Section({
       transition={{ duration: 2 }}
     >
       <Heading className="text-2xl">
-        <i className="hgi hgi-stroke hgi-magic-wand-02"></i>
+        <i className="hgi hgi-stroke hgi-magic-wand-02 text-accent-foreground"></i>
         {header}
       </Heading>
       {children}

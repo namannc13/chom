@@ -4,7 +4,7 @@ import { ModeToggle } from "./components/mode_toggle";
 import { InView } from "./components/ui/in_view";
 import { motion } from "motion/react";
 import ClickSpark from "./components/ui/click_spark";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home";
 import Projects from "./pages/projects";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ import Blogs from "./pages/blogs";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <motion.header
@@ -23,19 +24,31 @@ function Navbar() {
       <div className="flex items-center gap-6">
         <button
           onClick={() => navigate("/")}
-          className="relative text-16 text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className={`relative text-16 ${
+            location.pathname === "/"
+              ? "text-accent-foreground"
+              : "text-foreground"
+          } hover:cursor-pointer`}
         >
           <span className="hidden lg:inline">[h]</span> home
         </button>
         <button
           onClick={() => navigate("/projects")}
-          className="relative text-16 text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className={`relative text-16 ${
+            location.pathname === "/projects"
+              ? "text-accent-foreground"
+              : "text-foreground"
+          } hover:cursor-pointer`}
         >
           <span className="hidden lg:inline">[p]</span> projects
         </button>
         <button
           onClick={() => navigate("/blogs")}
-          className="relative text-16 text-primary hover:text-muted-foreground hover:cursor-pointer"
+          className={`relative text-16 ${
+            location.pathname === "/blogs"
+              ? "text-accent-foreground"
+              : "text-foreground"
+          } hover:cursor-pointer`}
         >
           <span className="hidden lg:inline">[b]</span> blogs
         </button>
@@ -63,7 +76,7 @@ function App() {
   return (
     <ThemeProvider>
       <ClickSpark
-        sparkColor="#727D73"
+        sparkColor="#B8001F"
         sparkSize={10}
         sparkRadius={15}
         sparkCount={8}

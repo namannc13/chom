@@ -13,7 +13,7 @@ function Link({
     <a
       href={href}
       className={cn(
-        "relative text-16 poppins-regular-italic text-primary hover:text-muted-foreground underline underline-offset-4",
+        "relative text-16 poppins-regular-italic text-foreground hover:text-muted-foreground underline underline-offset-4",
         className
       )}
     >

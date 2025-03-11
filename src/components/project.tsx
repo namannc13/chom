@@ -34,13 +34,13 @@ function Project({
       </div>
       <Link
         href={deployedLink}
-        className="text-muted-foreground hover:text-primary text-sm"
+        className="text-muted-foreground hover:text-foreground text-sm"
       >
         {deployment}
       </Link>
       <Link
         href={githubLink}
-        className="text-muted-foreground hover:text-primary text-sm"
+        className="text-muted-foreground hover:text-foreground text-sm"
       >
         {github}
       </Link>
