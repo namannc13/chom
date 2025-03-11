@@ -95,7 +95,7 @@ body {
   --foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent-foreground: #e8f9ff;
+  --accent-foreground: #B8001F;
   --border: oklch(0.269 0 0);
   
   --accent: oklch(0.269 0 0);

@@ -10,6 +10,7 @@ import { TextScramble } from "@/components/ui/text_scramble";
 import Work from "@/components/work";
 import { projects } from "@/data/projects";
 import { work } from "@/data/work";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
 function TopSection() {
@@ -91,6 +92,12 @@ function Home() {
                 year={project.year}
               />
             ))}
+            <Link
+              href="/projects"
+              className="flex items-center gap-2 text-accent-foreground hover:text-foreground"
+            >
+              All Projects <ArrowUpRight className="w-4 h-4" />
+            </Link>
           </div>
         </Section>
 
@@ -102,12 +109,16 @@ function Home() {
           transition={{ duration: 0.4 }}
         >
           <Section header="Blogs">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-              <div className="flex flex-col gap-2">
-                <p className="text-16 text-muted-foreground italic">
-                  Coming Soon
-                </p>
-              </div>
+            <div className="flex flex-col gap-4">
+              <p className="text-16 text-muted-foreground italic">
+                Coming Soon
+              </p>
+              <Link
+                href="/blogs"
+                className="flex items-center gap-2 text-accent-foreground pt-8 hover:text-foreground"
+              >
+                All Blogs <ArrowUpRight className="w-4 h-4" />
+              </Link>
             </div>
           </Section>
         </InView>
