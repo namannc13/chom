@@ -17,7 +17,7 @@ function Link({
     <button
       onClick={() => navigate(to)}
       className={cn(
-        "text-[16px] hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow]",
+        "text-[16px] hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow] text-muted-foreground hover:text-accent-foreground poppins-regular-italic",
         inline ? "inline" : "flex justify-start items-center gap-2",
         className
       )}

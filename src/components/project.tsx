@@ -33,13 +33,13 @@ function Project({
       </div>
       <button
         onClick={() => window.open(deployedLink, "_blank")}
-        className="text-[16px] flex justify-start items-center gap-2 text-muted-foreground hover:text-accent-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow]"
+        className="text-[16px] flex justify-start items-center gap-2 text-muted-foreground hover:text-accent-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow] poppins-regular-italic"
       >
         {deployment}
       </button>
       <button
         onClick={() => window.open(githubLink, "_blank")}
-        className="text-[16px] flex justify-start items-center gap-2 text-muted-foreground hover:text-accent-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow]"
+        className="text-[16px] flex justify-start items-center gap-2 text-muted-foreground hover:text-accent-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow] poppins-regular-italic"
       >
         {github}
       </button>

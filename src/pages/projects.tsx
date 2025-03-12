@@ -1,10 +1,10 @@
 import Heading from "@/components/heading";
 import { TextScramble } from "@/components/ui/text_scramble";
 import Para from "@/components/para";
-import Highlight from "@/components/highlight";
 import { motion } from "motion/react";
 import { projects } from "@/data/projects";
 import Project from "@/components/project";
+import Link from "@/components/link";
 
 function TopSection() {
   return (
@@ -22,8 +22,8 @@ function TopSection() {
       </Heading>
       <Para>
         Here are some of the Projects that I have worked on. Feel free to
-        checkout the <Highlight>Github Links</Highlight> for the same and
-        contribute to it.
+        checkout the <Link to="https://github.com/namannc13" className="text-primary hover:text-accent-foreground" inline>Github Links</Link>{" "}
+        for the same and contribute to it.
       </Para>
     </motion.div>
   );
