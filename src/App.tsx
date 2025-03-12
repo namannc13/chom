@@ -64,8 +64,8 @@ function Footer() {
       <p className="text-sm text-muted-foreground flex items-center gap-2">
         Made with <i className="hgi hgi-stroke hgi-heart-remove"></i> by Naman
       </p>
-      <div className="flex gap-2 items-center text-muted-foreground">
-        <p className="text-sm">2025</p>
+      <div className="flex gap-2 items-center text-muted-foreground justify-center text-sm">
+        2025
         <Clock />
       </div>
     </footer>

@@ -6,7 +6,9 @@ export const projects = [
     githubLink: "https://github.com/namannc13/chom",
     deployment: "chom-eosin.vercel.app",
     deployedLink: "https://chom-eosin.vercel.app/",
-    description: [[{ text: "My Portfolio Website" }]],
+    description: [
+      [{ text: "My " }, { text: "Portfolio Website", highlight: true }],
+    ],
     technologies: [
       {
         id: 1,
@@ -31,7 +33,11 @@ export const projects = [
     deployment: "daydrop.vercel.app",
     deployedLink: "https://daydrop.vercel.app/",
     description: [
-      [{ text: "A Journaling App which I use daily to track my day" }],
+      [
+        { text: "A " },
+        { text: "Journaling App ", highlight: true },
+        { text: "which I use daily to track my day" },
+      ],
     ],
     technologies: [
       {

@@ -2,6 +2,7 @@ import Para from "./para";
 import Badge from "./badge";
 import Highlight from "./highlight";
 import Heading from "./heading";
+import OuterLink from "./outer_link";
 
 function Project({
   name,
@@ -31,18 +32,8 @@ function Project({
         <Heading className="text-xl">{name}</Heading>
         <Para className="!leading-normal">{year}</Para>
       </div>
-      <button
-        onClick={() => window.open(deployedLink, "_blank")}
-        className="text-[16px] flex justify-start items-center gap-2 text-muted-foreground hover:text-accent-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow] poppins-regular-italic"
-      >
-        {deployment}
-      </button>
-      <button
-        onClick={() => window.open(githubLink, "_blank")}
-        className="text-[16px] flex justify-start items-center gap-2 text-muted-foreground hover:text-accent-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0 whitespace-nowrap transition-[color,box-shadow] poppins-regular-italic"
-      >
-        {github}
-      </button>
+      <OuterLink to={deployedLink}>{deployment}</OuterLink>
+      <OuterLink to={githubLink}>{github}</OuterLink>
       <div className="flex flex-wrap gap-2 pt-2 pb-1">
         {technologies.map((technology) => (
           <Badge key={technology.id} id={technology.id}>

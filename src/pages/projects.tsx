@@ -4,7 +4,7 @@ import Para from "@/components/para";
 import { motion } from "motion/react";
 import { projects } from "@/data/projects";
 import Project from "@/components/project";
-import Link from "@/components/link";
+import OuterLink from "@/components/outer_link";
 
 function TopSection() {
   return (
@@ -22,7 +22,7 @@ function TopSection() {
       </Heading>
       <Para>
         Here are some of the Projects that I have worked on. Feel free to
-        checkout the <Link to="https://github.com/namannc13" className="text-primary hover:text-accent-foreground" inline>Github Links</Link>{" "}
+        checkout the <OuterLink to="https://github.com/namannc13" className="text-primary hover:text-accent-foreground" inline>Github Links</OuterLink>{" "}
         for the same and contribute to it.
       </Para>
     </motion.div>
