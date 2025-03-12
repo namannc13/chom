@@ -53,6 +53,7 @@ function TopSection() {
         <Link
           to="https://agnext.com/"
           className="text-primary hover:text-accent-foreground"
+          inline
         >
           AgNext Technologies
         </Link>
@@ -149,6 +150,7 @@ function Home() {
                 <Highlight>
                   Aesthetics matter, but so does functionality!
                 </Highlight>
+                .
               </Para>
               <Para>
                 I'm always excited to try out{" "}
@@ -162,6 +164,7 @@ function Home() {
                 <Link
                   to="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9"
                   className="text-primary hover:text-accent-foreground"
+                  inline
                 >
                   Playlist
                 </Link>
@@ -171,7 +174,7 @@ function Home() {
                 When I'm not coding or vibing to music, you will find me playing
                 competitive shooters like <Highlight>Valorant</Highlight>,{" "}
                 <Highlight>Marvel Rivals</Highlight>, or battling it out in
-                platform fighters like <Highlight>Brawlhalla</Highlight>
+                platform fighters like <Highlight>Brawlhalla</Highlight>.
               </Para>
             </div>
           </Section>
