@@ -27,7 +27,7 @@ function Project({
   year: string;
 }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 sm:border sm:p-4 sm:rounded">
       <div className="flex justify-between items-center">
         <Heading className="text-xl">{name}</Heading>
         <Para className="!leading-normal">{year}</Para>

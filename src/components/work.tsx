@@ -17,10 +17,10 @@ function Work({
   technologies: { id: number; name: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 sm:border sm:p-4 sm:rounded">
       <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
         <Heading>{company}</Heading>
-        <Para className="!leading-normal text-sm">{duration}</Para>
+        <Para className="!leading-normal">{duration}</Para>
       </div>
       <Para className="!leading-normal text-sm">{name}</Para>
       <div className="flex flex-wrap gap-2 pt-1 pb-2">

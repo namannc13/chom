@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home";
 import Projects from "./pages/projects";
 import { useNavigate } from "react-router-dom";
-import Blogs from "./pages/blogs";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -40,16 +39,6 @@ function Navbar() {
           } hover:cursor-pointer`}
         >
           <span className="hidden lg:inline">[p]</span> projects
-        </button>
-        <button
-          onClick={() => navigate("/blogs")}
-          className={`relative text-[16px] ${
-            location.pathname === "/blogs"
-              ? "text-accent-foreground"
-              : "text-foreground"
-          } hover:cursor-pointer`}
-        >
-          <span className="hidden lg:inline">[b]</span> blogs
         </button>
       </div>
       <ModeToggle />
@@ -86,7 +75,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/blogs" element={<Blogs />} />
             </Routes>
           </main>
         </BrowserRouter>

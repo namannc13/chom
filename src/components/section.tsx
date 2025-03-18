@@ -13,7 +13,7 @@ function Section({
 }) {
   return (
     <motion.div
-      className={cn("flex flex-col gap-4", className)}
+      className={cn("flex flex-col gap-8", className)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}

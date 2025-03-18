@@ -69,8 +69,8 @@ function Home() {
       <div className="flex flex-col gap-16">
         <TopSection />
 
-        <Section header="Work" className="gap-8">
-          <div className="flex flex-col gap-8">
+        <Section header="Work">
+          <div className="flex flex-col gap-4">
             {work.map((work) => (
               <Work
                 key={work.id}
@@ -84,8 +84,8 @@ function Home() {
           </div>
         </Section>
 
-        <Section header="Projects" className="gap-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Section header="Projects">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-4">
             {projects.slice(0, 4).map((project) => (
               <Project
                 key={project.id}
@@ -118,31 +118,8 @@ function Home() {
           }}
           transition={{ duration: 0.4 }}
         >
-          <Section header="Blogs">
-            <div className="flex flex-col gap-4">
-              <p className="text-[16px] text-muted-foreground italic">
-                Coming Soon
-              </p>
-              <Button
-                variant="link"
-                onClick={() => navigate("/blogs")}
-                className="text-[16px] flex justify-start items-center gap-2 text-accent-foreground pt-8 hover:text-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0"
-              >
-                All Blogs <ArrowUpRight className="w-4 h-4" />
-              </Button>
-            </div>
-          </Section>
-        </InView>
-
-        <InView
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{ duration: 0.4 }}
-        >
           <Section header="Me">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 sm:border sm:p-4 sm:rounded">
               <Para>
                 I love creating{" "}
                 <Highlight>simple and clean-looking websites</Highlight> that
