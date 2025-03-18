@@ -1,4 +1,3 @@
-import { Clock } from "./components/clock";
 import { ThemeProvider } from "./components/theme_provider";
 import { ModeToggle } from "./components/mode_toggle";
 import { InView } from "./components/ui/in_view";
@@ -66,7 +65,6 @@ function Footer() {
       </p>
       <div className="flex gap-2 items-center text-muted-foreground justify-center text-sm">
         2025
-        <Clock />
       </div>
     </footer>
   );

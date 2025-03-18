@@ -147,9 +147,7 @@ function Home() {
                 I love creating{" "}
                 <Highlight>simple and clean-looking websites</Highlight> that
                 not only look great but also help people.{" "}
-                <Highlight>
-                  Aesthetics matter, but so does functionality!
-                </Highlight>
+                <Highlight>Both Aesthetics and Functionality matter!</Highlight>
                 .
               </Para>
               <Para>
@@ -159,8 +157,7 @@ function Home() {
               </Para>
               <Para>
                 <Highlight>Music is a huge part of my life</Highlight> - I
-                probably have my headphones on more than 50% of the time. Check
-                out my{" "}
+                probably listen to music more than I should. Check out my{" "}
                 <Link
                   to="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9"
                   className="text-primary hover:text-accent-foreground"
