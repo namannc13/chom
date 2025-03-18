@@ -41,7 +41,7 @@ function Projects() {
         transition={{ duration: 2 }}
       >
         {projects.map((project) => (
-          <div key={project.id} className="border p-4 rounded">
+          <div key={project.id}>
             <Project {...project} />
           </div>
         ))}
