@@ -1,3 +1,4 @@
+import Badge from "@/components/badge";
 import Heading from "@/components/heading";
 import Highlight from "@/components/highlight";
 import Link from "@/components/link";
@@ -10,6 +11,7 @@ import { TextEffect } from "@/components/ui/text_effect";
 import { TextScramble } from "@/components/ui/text_scramble";
 import Work from "@/components/work";
 import { projects } from "@/data/projects";
+import { skills } from "@/data/skills";
 import { work } from "@/data/work";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
@@ -110,6 +112,24 @@ function Home() {
             All Projects <ArrowUpRight className="w-4 h-4" />
           </Button>
         </Section>
+
+        <InView
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.4 }}
+        >
+          <Section header="Skills">
+            <div className="flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <Badge key={skill.id} id={skill.id}>
+                  {skill.name}
+                </Badge>
+              ))}
+            </div>
+          </Section>
+        </InView>
 
         <InView
           variants={{
