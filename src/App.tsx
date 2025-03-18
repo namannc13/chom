@@ -8,6 +8,7 @@ import Home from "./pages/home";
 import Projects from "./pages/projects";
 import { useNavigate } from "react-router-dom";
 import Blogs from "./pages/blogs";
+import Blog from "./pages/blog";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -87,6 +88,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/blogs" element={<Blogs />} />
+              <Route path="/blogs/:slug" element={<Blog />} />
             </Routes>
           </main>
         </BrowserRouter>

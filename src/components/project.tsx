@@ -36,7 +36,7 @@ function Project({
       <OuterLink to={githubLink}>{github}</OuterLink>
       <div className="flex flex-wrap gap-2 pt-2 pb-1">
         {technologies.map((technology) => (
-          <Badge key={technology.id} id={technology.id}>
+          <Badge id={technology.id} key={technology.id}>
             {technology.name}
           </Badge>
         ))}

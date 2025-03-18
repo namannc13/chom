@@ -1,6 +1,6 @@
 import Heading from "@/components/heading";
 import Highlight from "@/components/highlight";
-import Link from "@/components/link";
+import OuterLink from "@/components/outer_link";
 import Para from "@/components/para";
 import Project from "@/components/project";
 import Section from "@/components/section";
@@ -50,13 +50,13 @@ function TopSection() {
         Full Stack Developer who loves turning coffee into clean code solutions.
         I'm currently working as a{" "}
         <Highlight>Product Development Intern</Highlight> at{" "}
-        <Link
+        <OuterLink
           to="https://agnext.com/"
           className="text-primary hover:text-accent-foreground"
           inline
         >
           AgNext Technologies
-        </Link>
+        </OuterLink>
       </Para>
     </motion.div>
   );
@@ -158,13 +158,13 @@ function Home() {
               <Para>
                 <Highlight>Music is a huge part of my life</Highlight> - I
                 probably listen to music more than I should. Check out my{" "}
-                <Link
+                <OuterLink
                   to="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9"
                   className="text-primary hover:text-accent-foreground"
                   inline
                 >
                   Playlist
-                </Link>
+                </OuterLink>
                 .
               </Para>
               <Para>
@@ -187,18 +187,20 @@ function Home() {
           <Section header="Connect">
             <div className="flex flex-col gap-4">
               <div className="flex gap-4 flex-wrap">
-                <Link
+                <OuterLink
                   to="https://www.linkedin.com/in/naman-chawhan/"
                   className="text-primary hover:text-accent-foreground"
+                  inline
                 >
                   LinkedIn
-                </Link>
-                <Link
+                </OuterLink>
+                <OuterLink
                   to="https://github.com/namannc13"
                   className="text-primary hover:text-accent-foreground"
+                  inline
                 >
                   GitHub
-                </Link>
+                </OuterLink>
               </div>
             </div>
           </Section>
