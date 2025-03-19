@@ -7,7 +7,6 @@ import Project from "@/components/project";
 import Section from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { InView } from "@/components/ui/in_view";
-import { TextEffect } from "@/components/ui/text_effect";
 import { TextScramble } from "@/components/ui/text_scramble";
 import Work from "@/components/work";
 import { projects } from "@/data/projects";
@@ -25,7 +24,12 @@ function TopSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
     >
-      <div className="flex flex-col gap-2">
+      <motion.div
+        className="flex flex-col gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
         <Heading className="text-4xl">
           <TextScramble speed={0.005} duration={1}>
             Naman Chawhan
@@ -33,21 +37,17 @@ function TopSection() {
         </Heading>
         <div className="flex flex-col md:flex-row justify-between gap-2">
           <Heading className="text-muted-foreground" variant="faded">
-            <TextEffect per="char" preset="fade">
-              Full Stack Developer
-            </TextEffect>
+            Full Stack Developer
           </Heading>
           <Heading
             className="text-muted-foreground flex items-center gap-2"
             variant="faded"
           >
             <i className="hgi hgi-stroke hgi-location-01"></i>
-            <TextEffect per="char" preset="fade">
-              Chandigarh, India
-            </TextEffect>
+            Chandigarh, India
           </Heading>
         </div>
-      </div>
+      </motion.div>
       <Para>
         Full Stack Developer who loves turning coffee into clean code solutions.
         I'm currently working as a{" "}
