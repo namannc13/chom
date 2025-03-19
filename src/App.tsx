@@ -7,10 +7,34 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home";
 import Projects from "./pages/projects";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement
+      ) {
+        return;
+      }
+
+      switch (e.key.toLowerCase()) {
+        case "h":
+          navigate("/");
+          break;
+        case "p":
+          navigate("/projects");
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [navigate]);
 
   return (
     <motion.header
@@ -22,7 +46,7 @@ function Navbar() {
       <div className="flex items-center gap-6">
         <button
           onClick={() => navigate("/")}
-          className={`relative text-[16px] ${
+          className={`relative text-16 ${
             location.pathname === "/"
               ? "text-accent-foreground"
               : "text-foreground"
@@ -32,7 +56,7 @@ function Navbar() {
         </button>
         <button
           onClick={() => navigate("/projects")}
-          className={`relative text-[16px] ${
+          className={`relative text-16 ${
             location.pathname === "/projects"
               ? "text-accent-foreground"
               : "text-foreground"
