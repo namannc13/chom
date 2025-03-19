@@ -2,10 +2,10 @@ import Badge from "@/components/badge";
 import Heading from "@/components/heading";
 import Highlight from "@/components/highlight";
 import Link from "@/components/link";
+import OuterLink from "@/components/outer_link";
 import Para from "@/components/para";
 import Project from "@/components/project";
 import Section from "@/components/section";
-import { Button } from "@/components/ui/button";
 import { InView } from "@/components/ui/in_view";
 import { TextScramble } from "@/components/ui/text_scramble";
 import Work from "@/components/work";
@@ -14,7 +14,6 @@ import { skills } from "@/data/skills";
 import { work } from "@/data/work";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import { useNavigate } from "react-router-dom";
 
 function TopSection() {
   return (
@@ -52,20 +51,19 @@ function TopSection() {
         Full Stack Developer who loves turning coffee into clean code solutions.
         I'm currently working as a{" "}
         <Highlight>Product Development Intern</Highlight> at{" "}
-        <Link
+        <OuterLink
           to="https://agnext.com/"
           className="text-primary hover:text-accent-foreground"
           inline
         >
           AgNext Technologies
-        </Link>
+        </OuterLink>
       </Para>
     </motion.div>
   );
 }
 
 function Home() {
-  const navigate = useNavigate();
   return (
     <>
       <div className="flex flex-col gap-16">
@@ -104,13 +102,9 @@ function Home() {
               />
             ))}
           </div>
-          <Button
-            variant="link"
-            onClick={() => navigate("/projects")}
-            className="relative text-[16px] flex justify-start items-center gap-2 text-accent-foreground hover:text-foreground hover:cursor-pointer underline-offset-4 underline px-0 py-0"
-          >
+          <Link to="/projects">
             All Projects <ArrowUpRight className="w-4 h-4" />
-          </Button>
+          </Link>
         </Section>
 
         <InView
@@ -155,13 +149,13 @@ function Home() {
               <Para>
                 <Highlight>Music is a huge part of my life</Highlight> - I
                 probably listen to music more than I should. Check out my{" "}
-                <Link
+                <OuterLink
                   to="https://open.spotify.com/playlist/7aJTTUpRfBaptrgC37KpH9"
                   className="text-primary hover:text-accent-foreground"
                   inline
                 >
                   Playlist
-                </Link>
+                </OuterLink>
                 .
               </Para>
               <Para>
@@ -184,18 +178,20 @@ function Home() {
           <Section header="Connect">
             <div className="flex flex-col gap-4">
               <div className="flex gap-4 flex-wrap">
-                <Link
+                <OuterLink
                   to="https://www.linkedin.com/in/naman-chawhan/"
                   className="text-primary hover:text-accent-foreground"
+                  inline
                 >
                   LinkedIn
-                </Link>
-                <Link
+                </OuterLink>
+                <OuterLink
                   to="https://github.com/namannc13"
                   className="text-primary hover:text-accent-foreground"
+                  inline
                 >
                   GitHub
-                </Link>
+                </OuterLink>
               </div>
             </div>
           </Section>
