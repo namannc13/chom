@@ -23,11 +23,8 @@ function TopSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
     >
-      <motion.div
+      <div
         className="flex flex-col gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
       >
         <Heading className="text-4xl">
           <TextScramble speed={0.005} duration={1}>
@@ -46,7 +43,7 @@ function TopSection() {
             Chandigarh, India
           </Heading>
         </div>
-      </motion.div>
+      </div>
       <Para>
         Full Stack Developer who loves turning coffee into clean code solutions.
         I'm currently working as a{" "}
