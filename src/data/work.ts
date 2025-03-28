@@ -1,23 +1,47 @@
 export const work = [
   {
     id: 1,
-    name: "Product Development Intern",
+    name: "Software Development Intern",
     company: "AgNext Technologies",
     duration: "Nov 2024 - Present",
     description: [
       [
-        { text: "Responsible for developing and maintaining " },
-        { text: "Lab Scope Management System", highlight: true },
-        { text: " from scratch " },
-        { text: "displaying real world data", highlight: true },
+        { text: "Built " },
+        { text: "Lab Scope Management System ", highlight: true },
+        { text: "for FSSAI to " },
+        { text: "Visualize ", highlight: true },
+        { text: "Food Safety Data " },
+        { text: "using Graphs, Maps, Tables, and Charts ", highlight: true },
+        { text: "with " },
+        { text: "Advanced Search and Filter Mechanisms ", highlight: true },
+        { text: "utilizing " },
         {
-          text: " in a dashboard format with ",
+          text: "PostgresSQL for Efficient and Fast Data Fetching",
+          highlight: true,
         },
-        { text: "advanced search and filter functionality", highlight: true },
       ],
       [
-        { text: "Assisted in maintaining the " },
-        { text: "existing company's website", highlight: true },
+        {
+          text: "Created various ",
+        },
+        {
+          text: "UI components like Split Screen View, Table View, PDF View, Modal in Pages ",
+          highlight: true,
+        },
+        { text: "into Company’s Existing Project, " },
+        { text: "connecting them with Backend APIs", highlight: true },
+      ],
+      [
+        {
+          text: "Handled Forms ",
+          highlight: true,
+        },
+        { text: "across multiple Pages using " },
+        {
+          text: "Zod Validation with Advanced Form Handling ",
+          highlight: true,
+        },
+        { text: "for Improved Data Accuracy" },
       ],
     ],
     technologies: [

@@ -17,9 +17,9 @@ function Work({
   technologies: { id: number; name: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-2 sm:border sm:p-4 sm:rounded">
+    <div className="flex flex-col gap-2 sm:border sm:p-4 sm:rounded sm:hover:border-accent-foreground hover:cursor-pointer group">
       <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
-        <Heading>{company}</Heading>
+        <Heading className="group-hover:text-accent-foreground">{company}</Heading>
         <Para className="!leading-normal">{duration}</Para>
       </div>
       <Para className="!leading-normal text-sm">{name}</Para>

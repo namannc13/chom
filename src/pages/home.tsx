@@ -82,7 +82,7 @@ function Home() {
         </Section>
 
         <Section header="Projects">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-4">
+          <div className="grid grid-cols-1 gap-8 sm:gap-4">
             {projects.slice(0, 4).map((project) => (
               <Project
                 key={project.id}
@@ -99,7 +99,7 @@ function Home() {
               />
             ))}
           </div>
-          <Link to="/projects">
+          <Link to="/projects" className="text-accent-foreground hover:text-foreground">
             All Projects <ArrowUpRight className="w-4 h-4" />
           </Link>
         </Section>

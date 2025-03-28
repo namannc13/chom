@@ -27,9 +27,9 @@ function Project({
   year: string;
 }) {
   return (
-    <div className="flex flex-col gap-2 sm:border sm:p-4 sm:rounded">
+    <div className="flex flex-col gap-2 sm:border sm:p-4 sm:rounded sm:hover:border-accent-foreground hover:cursor-pointer group">
       <div className="flex justify-between items-center">
-        <Heading className="text-xl">{name}</Heading>
+        <Heading className="text-xl group-hover:text-accent-foreground">{name}</Heading>
         <Para className="!leading-normal">{year}</Para>
       </div>
       <OuterLink to={deployedLink}>{deployment}</OuterLink>

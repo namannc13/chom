@@ -53,7 +53,7 @@ export function ThemeProvider({
         root.style.setProperty("--foreground", "oklch(0.985 0 0)");
         root.style.setProperty("--muted", "oklch(0.269 0 0)");
         root.style.setProperty("--muted-foreground", "oklch(0.708 0 0)");
-        root.style.setProperty("--accent-foreground", "#B8001F");
+        root.style.setProperty("--accent-foreground", "#FFD95F");
         root.style.setProperty("--border", "oklch(0.269 0 0)");
         break;
 
@@ -62,7 +62,7 @@ export function ThemeProvider({
         root.style.setProperty("--foreground", "oklch(0.205 0 0)");
         root.style.setProperty("--muted", "oklch(0.97 0 0)");
         root.style.setProperty("--muted-foreground", "oklch(0.556 0 0)");
-        root.style.setProperty("--accent-foreground", "#B8001F");
+        root.style.setProperty("--accent-foreground", "#E52020");
         root.style.setProperty("--border", "oklch(0.922 0 0)");
         break;
     }
