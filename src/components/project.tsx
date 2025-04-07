@@ -17,8 +17,8 @@ function Project({
   name: string;
   github: string;
   githubLink: string;
-  deployment: string;
-  deployedLink: string;
+  deployment: string | undefined;
+  deployedLink: string | undefined;
   description: { text: string; highlight?: boolean }[][];
   technologies: {
     id: number;
@@ -29,10 +29,14 @@ function Project({
   return (
     <div className="flex flex-col gap-2 sm:border sm:p-4 sm:rounded sm:hover:border-accent-foreground hover:cursor-pointer group">
       <div className="flex justify-between items-center">
-        <Heading className="text-xl group-hover:text-accent-foreground">{name}</Heading>
+        <Heading className="text-xl group-hover:text-accent-foreground">
+          {name}
+        </Heading>
         <Para className="!leading-normal">{year}</Para>
       </div>
-      <OuterLink to={deployedLink}>{deployment}</OuterLink>
+      {deployment && deployedLink && (
+        <OuterLink to={deployedLink}>{deployment}</OuterLink>
+      )}
       <OuterLink to={githubLink}>{github}</OuterLink>
       <div className="flex flex-wrap gap-2 pt-2 pb-1">
         {technologies.map((technology) => (

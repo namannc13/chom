@@ -6,48 +6,28 @@ export const work = [
     duration: "Nov 2024 - Present",
     description: [
       [
-        { text: "Built " },
-        { text: "Lab Scope Management System ", highlight: true },
-        { text: "for FSSAI to " },
-        { text: "Visualize ", highlight: true },
-        { text: "Food Safety Data " },
-        { text: "using Graphs, Maps, Tables, and Charts ", highlight: true },
-        { text: "with " },
-        { text: "Advanced Search and Filter Mechanisms ", highlight: true },
-        { text: "utilizing " },
         {
-          text: "PostgresSQL for Efficient and Fast Data Fetching",
+          text: "Developed a centralized data analysis platform using the PERN stack, integrating graph, map, table, and chart views with advanced search and filtering, enhancing decision making for FSSAI officials.",
           highlight: true,
         },
       ],
       [
         {
-          text: "Created various ",
-        },
-        {
-          text: "UI components like Split Screen View, Table View, PDF View, Modal in Pages ",
+          text: "Designed and developed UI for new features, enhanced existing UI with consistency and responsiveness, helped deploy it to production resulting in a more appealing interface and better user experience.",
           highlight: true,
         },
-        { text: "into Company’s Existing Project, " },
-        { text: "connecting them with Backend APIs", highlight: true },
       ],
       [
         {
-          text: "Handled Forms ",
+          text: "Built and optimized backend APIs with pagination to handle large scale industry data efficiently, ensuring high performance retrieval.",
           highlight: true,
         },
-        { text: "across multiple Pages using " },
-        {
-          text: "Zod Validation with Advanced Form Handling ",
-          highlight: true,
-        },
-        { text: "for Improved Data Accuracy" },
       ],
     ],
     technologies: [
       { id: 1, name: "React" },
-      { id: 3, name: "Tailwind" },
-      { id: 2, name: "Node" },
+      { id: 3, name: "Tailwind CSS" },
+      { id: 2, name: "Node.js" },
       { id: 4, name: "Express" },
       { id: 5, name: "MongoDB" },
       { id: 6, name: "PostgreSQL" },
