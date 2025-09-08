@@ -67,7 +67,7 @@ function Home() {
         <TopSection />
 
         <Section header="Work">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8 sm:gap-4">
             {work.map((work) => (
               <Work
                 key={work.id}
