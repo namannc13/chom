@@ -33,27 +33,27 @@ function TopSection() {
         </Heading>
         <div className="flex flex-col md:flex-row justify-between gap-2">
           <Heading className="text-muted-foreground" variant="faded">
-            Full Stack Developer
+            Full Stack Developer / Software Developer
           </Heading>
           <Heading
             className="text-muted-foreground flex items-center gap-2"
             variant="faded"
           >
             <i className="hgi hgi-stroke hgi-location-01"></i>
-            Chandigarh, India
+            Mumbai, India
           </Heading>
         </div>
       </div>
       <Para>
         Full Stack Developer who loves turning coffee into clean code solutions.
         I'm currently working as a{" "}
-        <Highlight>Product Development Intern</Highlight> at{" "}
+        <Highlight>Data Management Specialist</Highlight> at{" "}
         <OuterLink
-          to="https://agnext.com/"
+          to="https://www.acies.consulting/"
           className="text-primary hover:text-accent-foreground"
           inline
         >
-          AgNext Technologies
+          Acies LLP
         </OuterLink>
       </Para>
     </motion.div>
@@ -130,7 +130,7 @@ function Home() {
           transition={{ duration: 0.4 }}
         >
           <Section header="Me">
-            <div className="flex flex-col gap-4 sm:border sm:p-4 sm:rounded">
+            <div className="flex flex-col gap-4 sm:border sm:p-4 sm:rounded sm:hover:border-accent-foreground sm:hover:cursor-pointer">
               <Para>
                 I love creating{" "}
                 <Highlight>simple and clean-looking websites</Highlight> that

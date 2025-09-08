@@ -1,9 +1,9 @@
 export const work = [
   {
     id: 1,
-    name: "Software Development Intern",
+    name: "Product Intern",
     company: "AgNext Technologies",
-    duration: "Nov 2024 - Present",
+    duration: "Nov 2024 - May 2025",
     description: [
       [
         {
@@ -31,6 +31,19 @@ export const work = [
       { id: 4, name: "Express" },
       { id: 5, name: "MongoDB" },
       { id: 6, name: "PostgreSQL" },
+    ],
+  },
+  {
+    id: 2,
+    name: "Data Management Specialist",
+    company: "Acies LLP",
+    duration: "Sep 2025 - Present",
+    description: [],
+    technologies: [
+      { id: 1, name: "Python" },
+      { id: 3, name: "Numpy" },
+      { id: 2, name: "Pandas" },
+      { id: 4, name: "SQL" },
     ],
   },
 ];

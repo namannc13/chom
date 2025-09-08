@@ -38,7 +38,7 @@ function Navbar() {
 
   return (
     <motion.header
-      className="md:mx-10 lg:mx-36 xl:mx-76 py-8 flex justify-between"
+      className="md:mx-10 lg:mx-20 xl:mx-40 py-8 flex justify-between"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
@@ -52,7 +52,7 @@ function Navbar() {
               : "text-foreground"
           } hover:cursor-pointer`}
         >
-          <span className="hidden lg:inline">[h]</span> home
+          <span className="hidden lg:inline">[h]</span> Home
         </button>
         <button
           onClick={() => navigate("/projects")}
@@ -62,7 +62,7 @@ function Navbar() {
               : "text-foreground"
           } hover:cursor-pointer`}
         >
-          <span className="hidden lg:inline">[p]</span> projects
+          <span className="hidden lg:inline">[p]</span> Projects
         </button>
       </div>
       <ModeToggle />
@@ -72,7 +72,7 @@ function Navbar() {
 
 function Footer() {
   return (
-    <footer className="md:px-10 lg:px-36 xl:px-76 border-t border-border py-4 flex justify-between">
+    <footer className="md:mx-10 lg:mx-20 xl:mx-40 border-t border-border py-4 flex justify-between">
       <p className="text-sm text-muted-foreground flex items-center gap-2">
         Made with <i className="hgi hgi-stroke hgi-heart-remove"></i> by Naman
       </p>
@@ -95,7 +95,7 @@ function App() {
       >
         <BrowserRouter>
           <Navbar />
-          <main className="md:mx-10 lg:mx-36 xl:mx-76 pb-8 min-h-[calc(100svh-153px)] sm:min-h-[calc(100vh-153px)]">
+          <main className="md:mx-10 lg:mx-20 xl:mx-40 pb-8 min-h-[calc(100svh-153px)] sm:min-h-[calc(100vh-153px)]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />

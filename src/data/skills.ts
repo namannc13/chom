@@ -8,4 +8,8 @@ export const skills = [
   { id: 7, name: "MongoDB" },
   { id: 8, name: "PostgreSQL" },
   { id: 9, name: "Java" },
+  { id: 10, name: "Python" },
+  { id: 11, name: "Numpy" },
+  { id: 12, name: "Pandas" },
+  { id: 13, name: "Flask" },
 ];
